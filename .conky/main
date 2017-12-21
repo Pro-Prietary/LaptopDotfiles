@@ -1,0 +1,98 @@
+update_interval 0.50
+
+double_buffer yes
+
+own_window yes
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 255 
+own_window_type dock #window dock panel desktop override
+own_window_class conky
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+text_buffer_size 6100 # large buffer needed
+
+# max_specials 512
+max_user_text 10000
+
+# Minimum size of text area
+minimum_size 1080 5
+maximum_width 300
+
+draw_shades no
+draw_outline no # amplifies text if yes
+draw_borders no
+draw_graph_borders no
+
+use_xft no
+#xftalpha 0.9
+#xftfont Noto Sans:size=7.5
+#uppercase no
+#override_utf8_locale yes
+#se_spacer none
+#short_units yes
+
+default_bar_size 228 5
+
+gap_x 5
+gap_y 20
+
+color1 00BD7E
+color2 F2F200
+
+alignment top_right
+
+TEXT
+
+#colour used to be "${color2}"
+
+#SYSTEM
+${color2}${font :bold:size=10}System${color1}${alignr 210}${hr 2}
+
+${color1}Kernel:${color2}${alignr}$sysname $kernel
+${color1}Edition:${color2}${alignr}${execi 10000 awk -F= '/ID=/{printf $2" "} /RELEASE=/{printf $2" "} /NAME=/{print $2}' /etc/lsb-release}
+${color1}UpTime:${color2} ${alignr}${uptime}
+${color1}Battery${color2}${goto 60}${Battery_short BAT0}${alignr}${battery_bar 8,200}
+
+#PROCESSOR
+${color2}${font :bold:size=10}Processor${color1}${alignr 210}${hr 2}
+
+${color1}Processor: ${color2}${alignr 6}${execi 10000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-19 | uniq}${execi 10000 cat /proc/cpuinfo | grep 'model name' | cut -c 24-51 | uniq}
+
+${color1}CPU  ${alignr}${freq_g 0} GHz ${cpubar cpu0 8,200}
+${goto 10}${color2}CPU1 ${alignr}${freq_g 1} GHz ${cpubar cpu1 8,190}
+${goto 20}${color1}CPU2 ${alignr}${freq_g 2} GHz ${cpubar cpu2 8,180}
+${goto 30}${color2}CPU3 ${alignr}${freq_g 3} GHz ${cpubar cpu3 8,170}
+${goto 40}${color1}CPU4 ${alignr}${freq_g 4} GHz ${cpubar cpu4 8,160}
+
+#CPU PROCESSES
+${color2}${font :bold:size=10}Processes${color1}${alignr 210}${hr 2}$font
+${voffset 05}${color1}Amount: ${color2}${alignr 153}${processes} (${running_processes} active)${alignr 6}${font :bold:size=8}${color1}Top 4 CPU Processes:${font}
+Name              CPU%       Time            Mem
+${color2}
+${top name 1}${goto 100}${top cpu 1}${alignr 55}${top time 1}${alignr 6}${top mem 1}
+${top name 2}${goto 100}${top cpu 2}${alignr 55}${top time 2}${alignr 6}${top mem 2}
+${top name 3}${goto 100}${top cpu 3}${alignr 55}${top time 3}${alignr 6}${top mem 3}
+${top name 4}${goto 100}${top cpu 4}${alignr 55}${top time 4}${alignr 6}${top mem 4}
+
+#MEMORY
+${font :bold:size=10}${color2}Memory${color1}${alignr 210}${hr 2}$font
+${color1}${voffset 5}RAM${color2}${goto 60}${mem}${alignr 6}${membar 8,200}
+${color1}${voffset 5}Swap${color2}${goto 60}${swap}${alignr 6}${swapbar 8,200}
+${voffset 5}${font :bold:size=8}${color1}Top 4 Mem Processes:${font}
+${color1}Name${goto 100}Mem%${alignr 26}Mem_res${alignr 6}Mem_vsize${color2}
+${top_mem name 1}${goto 100}${top_mem mem 1}%${alignr 55}${top_mem mem_res 1}${alignr 6}${top_mem mem_vsize 1}
+${top_mem name 2}${goto 100}${top_mem mem 2}%${alignr 55}${top_mem mem_res 2}${alignr 6}${top_mem mem_vsize 2}
+${top_mem name 3}${goto 100}${top_mem mem 3}%${alignr 55}${top_mem mem_res 3}${alignr 6}${top_mem mem_vsize 3}
+${top_mem name 4}${goto 100}${top_mem mem 4}%${alignr 55}${top_mem mem_res 4}${alignr 6}${top_mem mem_vsize 4}
+
+#HARD DISKS
+${font :bold:size=10}${color2}Hard disks${color1}${alignr 210}${hr 2}$font
+${voffset 15}${color2}HDD1${goto 60}${fs_used_perc /}%${alignr 6}${fs_bar 8,200 /}
+
+#NETWORK
+${font :bold:size=10}${color2}Network${color1}${alignr 210}${hr 2}$font
+${voffset 30}${color2}Download speed:
+${goto 30}${}${downspeed wlp6s0}${voffset -50}${alignr 6}${downspeedgraph wlp6s0 50,160 -l}
+${voffset 30}Upload speed:
+${goto 30}${color2}${upspeed wlp6s0}${voffset -50}${alignr 6}${upspeedgraph wlp6s0 50,160 -l}
