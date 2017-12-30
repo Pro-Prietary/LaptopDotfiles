@@ -8,7 +8,8 @@ Things you may need if you'd like this to work out of the box
 - feh
 - polkit-gnome
 - i3-gaps
-- i3lock-fancy
+- betterlockscreen
+- i3-colorgaps
 - xfce4-terminal
 - ranger
 - thunar
