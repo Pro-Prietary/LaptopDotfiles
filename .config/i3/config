@@ -148,7 +148,7 @@
 	for_window [class="Thunar"] move position center
 	for_window [class="Thunar"] reside set 800 300
 
-# Configuring Keepass
+# Configuring Keepassxc
 	for_window [class="keepassxc"] floating enable
 	for_window [class="keepassxc"] move position center
 	for_window [class="keepassxc"] resize set 800 300

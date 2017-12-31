@@ -2,6 +2,10 @@
 This is my Laptop's dotfiles! I use I3 with Polybar!
 Things you may need if you'd like this to work out of the box
 - compton
+- mpv
+- firefox
+- audacity
+- kdenlive
 - redshift
 - megasync
 - parcellite
