@@ -21,6 +21,7 @@ Things you may need if you'd like this to work out of the box
 - lxappearance
 - lx-task
 - maim
+- betterlockscreen
 - polybar
 - rofi
 - qutebrowser
