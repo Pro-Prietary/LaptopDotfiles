@@ -30,7 +30,7 @@
 	floating_modifier $mod
 
 # start a terminal
-	bindsym $mod+Return exec xfce4-terminal 
+	bindsym $mod+Return exec urxvt
 
 # kill focused window
 	bindsym $mod+Shift+q kill
@@ -59,11 +59,9 @@
 	bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-	bindsym $mod+Left split h
 	bindsym $mod+Right split h
 
 # split in vertical orientation
-	bindsym $mod+Up split v
 	bindsym $mod+Down split v
 
 # enter fullscreen mode for the focused container
@@ -86,9 +84,9 @@
 # focus the child container
 	# bindsym $mod+d focus child
 
-	set $workspace1 "1."
-	set $workspace2 "2."
-	set $workspace3 "3."
+	set $workspace1 "1"
+	set $workspace2 "2"
+	set $workspace3 "3"
 	set $workspace4 "4"
 	set $workspace5 "5"
 	set $workspace6 "6"
@@ -120,6 +118,9 @@
 	bindsym $mod+Shift+8 move container to workspace $workspace8
 	bindsym $mod+Shift+9 move container to workspace $workspace9
 	bindsym $mod+Shift+0 move container to workspace $workspace0
+
+# Configuring ALL types of windows
+	new_window 1pixel
 
 # Configure Qutebrowser
 	for_window [class="qutebrowser"] move to workspace $workspace1
@@ -159,6 +160,10 @@
 # Configure Feh
 	for_window [class="feh"] layout tabbed
 
+# Configure Texmaker
+	for_window [class="Texmaker"] move to workspace $workspace2
+	for_window [class="Texmaker"] layout tabbed
+
 # Configure Steam
 	#for_window [class="Steam"] floating enable
 	#for_window [class="Steam"] move position center
@@ -181,14 +186,14 @@
 # exit i3 (logs you out of your X session)
 	bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit?' -b 'Yeh' 'i3-msg exit'"
 
-# re-resizewindow
-bindsym $mod+Shift+Left resize shrink width 10 px or 10ppt
-bindsym $mod+Shift+Down resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+Up resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+Right resize grow width 10 px or 10 ppt
+# resize window
+	bindsym $mod+y resize shrink width 10 px or 10ppt
+	bindsym $mod+u resize shrink height 10 px or 10 ppt
+	bindsym $mod+i resize grow height 10 px or 10 ppt
+	bindsym $mod+o resize grow width 10 px or 10 ppt
 
 # Open Htop
-	bindsym $mod+m exec xfce4-terminal -e htop
+	bindsym $mod+m exec urxvt -e htop
 
 # Open lx-task
 	bindsym $mod+Shift+m exec lxtask
@@ -215,6 +220,7 @@ bindsym $mod+Shift+Right resize grow width 10 px or 10 ppt
 	bindsym XF86AudioPrev exec playerctl previous
 
 # Startup applications
+	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
 	exec_always --no-startup-id home/cyrano/Scripts/screenlayout_script.sh
 	exec_always --no-startup-id compton -f
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -222,19 +228,21 @@ bindsym $mod+Shift+Right resize grow width 10 px or 10 ppt
 	exec --no-startup-id redshift
 	exec --no-startup-id megasync
 	exec --no-startup-id parcellite
-	exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
 	exec /home/cyrano/Scripts/DLL06B0config_script
 	exec xfce4-power-manager
 	#exec --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/bestgirl.jpg
 
 # File manager
-	bindsym $mod+f exec xfce4-terminal -e ranger
+	bindsym $mod+f exec urxvt -e ranger
 
 # Screenshot
-# 	Fullscreen
+	# Fullscreen
 	bindsym Print exec maim -u | xclip -selection clipboard -t image/png
-#	Select
+	# Select
 	bindsym Shift+Print exec maim -s -u | xclip -selection clipboard -t image/png
+
+# Blink screen
+	bindsym $mod+BackSpace exec /home/cyrano/Scripts/blinkscreen_script.sh
 
 # Gaps configuration
 gaps inner 20
