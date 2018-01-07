@@ -14,7 +14,6 @@ Things you may need if you'd like this to work out of the box
 - i3-gaps
 - betterlockscreen
 - i3-colorgaps
-- xfce4-terminal
 - ranger
 - thunar
 - xfce4-power-manager
