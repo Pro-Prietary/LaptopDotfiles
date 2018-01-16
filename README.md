@@ -31,5 +31,10 @@ Things you may need if you'd like this to work out of the box
 - xbacklight
 - playerctl
 - pactl
+- jabref
+- texmaker
+- texlive (or texcore, if you're on a Debian-based OS)
+- biber
+
 
 Will edit if there's any more I've overlooked
