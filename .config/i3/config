@@ -145,9 +145,9 @@
 	for_window [class="Lutris"] layout tabbed
 
 # Configuring Thunar 
-	for_window [class="Thunar"] floating enable 
-	for_window [class="Thunar"] move position center
-	for_window [class="Thunar"] reside set 800 300
+	#for_window [class="Thunar"] floating enable 
+	#for_window [class="Thunar"] move position center
+	#for_window [class="Thunar"] reside set 800 300
 
 # Configuring Keepassxc
 	for_window [class="keepassxc"] floating enable
@@ -192,11 +192,9 @@
 	bindsym $mod+i resize grow height 10 px or 10 ppt
 	bindsym $mod+o resize grow width 10 px or 10 ppt
 
-# Open Htop
-	bindsym $mod+m exec urxvt -e htop
-
-# Open lx-task
-	bindsym $mod+Shift+m exec lxtask
+# Open Htop and Lxtask (Task Managers)
+	bindsym $mod+t exec urxvt -e htop
+	bindsym $mod+Shift+t exec lxtask
 
 # Betterlockscreen
 	bindsym $mod+Shift+Delete exec betterlockscreen -l
@@ -233,7 +231,19 @@
 	#exec --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/bestgirl.jpg
 
 # File manager
-	bindsym $mod+f exec urxvt -e ranger
+	bindsym $mod+r exec urxvt -e ranger
+	bindsym $mod+f exec thunar
+
+# Discord is being a bitch for whatever reason and I can't find the solution to it, so I have to add these fucking ugly-ass scripts I made at 4:00 in the morning that may look horrible to a more experienced writer of bash scripts
+## This command resets my mic because Discord
+	bindsym $mod+m exec /home/cyrano/Scripts/resetmic.sh 
+## This command mutes my mic because convenience
+	bindsym $mod+Shift+m exec /home/cyrano/Scripts/togglemic.sh
+
+# Pavucontrol
+	bindsym $mod+p exec pavucontrol
+# Alsamixer
+	bindsym $mod+Shift+p exec urxvt -e alsamixer
 
 # Screenshot
 	# Fullscreen
