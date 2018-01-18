@@ -1,7 +1,7 @@
 #!/bin/sh
 
 :start
-amixer set Capture 0%
+amixer set Capture toggle
 sleep 1
-amixer set Capture 25%
+amixer set Capture toggle
 goto start
