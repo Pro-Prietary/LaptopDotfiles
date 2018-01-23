@@ -78,9 +78,6 @@
 # change focus between tiling / floating windows
 	bindsym $mod+z focus mode_toggle
 
-# focus the parent container
-	# bindsym $mod+a focus parent
-
 # focus the child container
 	# bindsym $mod+d focus child
 
@@ -121,6 +118,9 @@
 
 # Configuring ALL types of windows
 	new_window 1pixel
+
+# Configuring OwnCloud
+	for_window [class="ownCloud"] floating disable
 
 # Configure Qutebrowser
 	for_window [class="qutebrowser"] move to workspace $workspace1
@@ -193,8 +193,8 @@
 	bindsym $mod+o resize grow width 10 px or 10 ppt
 
 # Open Htop and Lxtask (Task Managers)
-	bindsym $mod+t exec urxvt -e htop
-	bindsym $mod+Shift+t exec lxtask
+	bindsym $mod+backslash exec urxvt -e htop
+	bindsym $mod+Shift+backslash exec lxtask
 
 # Betterlockscreen
 	bindsym $mod+Shift+Delete exec betterlockscreen -l
@@ -224,7 +224,7 @@
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id betterlockscreen -u /home/cyrano/Pictures/Background_Pictures && betterlockscreen -w dimblur
 	exec --no-startup-id redshift
-	exec --no-startup-id megasync
+	exec --no-startup-id owncloud
 	exec --no-startup-id parcellite
 	exec /home/cyrano/Scripts/DLL06B0config_script
 	exec xfce4-power-manager
@@ -236,9 +236,9 @@
 
 # Discord is being a bitch for whatever reason and I can't find the solution to it, so I have to add these fucking ugly-ass scripts I made at 4:00 in the morning that may look horrible to a more experienced writer of bash scripts
 ## This command resets my mic because Discord
-	bindsym $mod+m exec /home/cyrano/Scripts/resetmic.sh 
+	bindsym $mod+shift+m exec /home/cyrano/Scripts/resetmic.sh 
 ## This command mutes my mic because convenience
-	bindsym $mod+Shift+m exec /home/cyrano/Scripts/togglemic.sh
+	bindsym $mod+m exec /home/cyrano/Scripts/togglemic.sh
 
 # Pavucontrol
 	bindsym $mod+p exec pavucontrol
@@ -253,6 +253,9 @@
 
 # Blink screen
 	bindsym $mod+BackSpace exec /home/cyrano/Scripts/blinkscreen_script.sh
+
+# hackerman mode, why not?
+	bindsym $mod+Escape exec /home/cyrano/Scripts/hackerman_script.sh
 
 # Gaps configuration
 gaps inner 20

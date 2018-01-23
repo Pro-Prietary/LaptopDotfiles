@@ -9,13 +9,13 @@ highlight NonText ctermbg=Black
 highlight Special ctermbg=DarkMagenta
 highlight Cursor ctermbg=Green
 
-ino " ""<left>
 ino ( ()<left>
 ino [ []<left>
 ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
 ino {;<CR> {<CR>};<ESC>O
 "ino ' ''<left>
+"ino " ""<left>
 
 set background=dark
 hi Comment ctermfg=LightBlue
