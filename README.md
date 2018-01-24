@@ -37,6 +37,7 @@ Things you may need if you'd like this to work out of the box
 - wicd
 - xclip
 - Reddit Terminal Viewer (rtv)
+- urxvt
 
 
 Will edit if there's any more I've overlooked
