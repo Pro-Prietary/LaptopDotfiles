@@ -1,0 +1,50 @@
+delete
+delete r
+search sd
+open_with 
+rename DLL06B0config_script
+search .mpv
+search mpv
+search vis
+search cava
+search desktop
+open_with vimiv
+rename 0495915424.pdf
+search .confi
+search config
+search rc
+search mailcap
+search share
+search doc
+search poly
+search polybar
+search vim
+search .conky
+search Des
+search level
+search q
+search steam
+mkdir backup
+rename drifter.png
+open_with zip
+open_with unzip
+open_with engrampa
+terminal
+rename futaba.jpg
+search .
+cd
+cd .config/i3/
+rename config
+cd Desktop/Testing Grounds/LaptopDotfiles/
+search .vimrc
+search cd
+cd Desktop/LaptopDotfiles
+
+search .Xresources
+search 
+cd /home/cyrano/Desktop/Testing Grounds/LaptopDotfiles
+search .config
+search .ssh
+search .confil
+search i3
+search Scr
