@@ -5,4 +5,4 @@ if [ $? -eq 1 ]; then
     exec -a 'hackerman-music' mpv "$HOME/Music/Hackerman_Theme.opus" &
     killhm=1
 fi
-urxvt ; if [ $killhm -eq 1 ]; then pkill -f 'hackerman-music'; fi
+lxterminal ; if [ $killhm -eq 1 ]; then pkill -f 'hackerman-music'; fi
