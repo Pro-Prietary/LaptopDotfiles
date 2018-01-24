@@ -144,11 +144,6 @@
 	for_window [class="Lutris"] move to workspace $workspace3
 	for_window [class="Lutris"] layout tabbed
 
-# Configuring Thunar 
-	#for_window [class="Thunar"] floating enable 
-	#for_window [class="Thunar"] move position center
-	#for_window [class="Thunar"] reside set 800 300
-
 # Configuring Keepassxc
 	for_window [class="keepassxc"] floating enable
 	for_window [class="keepassxc"] move position center
@@ -232,7 +227,7 @@
 
 # File manager
 	bindsym $mod+r exec urxvt -e ranger
-	bindsym $mod+f exec thunar
+	bindsym $mod+f exec pcmanfm
 
 # Discord is being a bitch for whatever reason and I can't find the solution to it, so I have to add these fucking ugly-ass scripts I made at 4:00 in the morning that may look horrible to a more experienced writer of bash scripts
 ## This command resets my mic because Discord
