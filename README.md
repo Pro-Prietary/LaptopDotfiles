@@ -15,7 +15,7 @@ Things you may need if you'd like this to work out of the box
 - betterlockscreen
 - i3-colorgaps
 - ranger
-- thunar
+- pcmanfm
 - xfce4-power-manager
 - lxappearance
 - lx-task
@@ -23,7 +23,6 @@ Things you may need if you'd like this to work out of the box
 - betterlockscreen
 - polybar
 - rofi
-- qutebrowser
 - lutris
 - keepassxc
 - steam
