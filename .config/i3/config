@@ -30,7 +30,7 @@
 	floating_modifier $mod
 
 # start a terminal
-	bindsym $mod+Return exec urxvt
+	bindsym $mod+Return exec lxterminal
 
 # kill focused window
 	bindsym $mod+Shift+q kill
@@ -188,7 +188,7 @@
 	bindsym $mod+o resize grow width 10 px or 10 ppt
 
 # Open Htop and Lxtask (Task Managers)
-	bindsym $mod+backslash exec urxvt -e htop
+	bindsym $mod+backslash exec lxterminal -e htop
 	bindsym $mod+Shift+backslash exec lxtask
 
 # Betterlockscreen
@@ -221,12 +221,13 @@
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
 	exec --no-startup-id parcellite
+	exec --no-startup-id nm-applet
 	exec /home/cyrano/Scripts/DLL06B0config_script
 	exec xfce4-power-manager
 	#exec --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/bestgirl.jpg
 
 # File manager
-	bindsym $mod+r exec urxvt -e ranger
+	bindsym $mod+r exec lxterminal -e ranger
 	bindsym $mod+f exec pcmanfm
 
 # Discord is being a bitch for whatever reason and I can't find the solution to it, so I have to add these fucking ugly-ass scripts I made at 4:00 in the morning that may look horrible to a more experienced writer of bash scripts
@@ -238,7 +239,7 @@
 # Pavucontrol
 	bindsym $mod+p exec pavucontrol
 # Alsamixer
-	bindsym $mod+Shift+p exec urxvt -e alsamixer
+	bindsym $mod+Shift+p exec lxterminal -e alsamixer
 
 # Screenshot
 	# Fullscreen
