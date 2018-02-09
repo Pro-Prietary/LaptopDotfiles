@@ -21,27 +21,33 @@
 # Startup applications
 	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
 	exec_always --no-startup-id home/cyrano/Scripts/screenlayout_script.sh
-	exec_always --no-startup-id compton -f
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id betterlockscreen -u /home/cyrano/Pictures/Background_Pictures && betterlockscreen -w dimblur
+	exec_always --no-startup-id compton -f
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
 	exec --no-startup-id parcellite
 	exec --no-startup-id nm-applet
-	exec /home/cyrano/Scripts/DLL06B0config_script
-	exec xfce4-power-manager
+	exec --no-startup-id /home/cyrano/Scripts/DLL06B0config_script
+	exec --no-startup-id /home/cyrano/Scripts/Synaptics_TM3096-001_script
+	exec --no-startup-id xfce4-power-manager
+	exec --no-startup-id keepassxc
+	exec --no-startup-id lxterminal -t Floatation_Device
+	#exec --no-startup-id setxkbmap -option caps:escape
 	#exec --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/bestgirl.jpg
 
 # start a terminal
-	bindsym $mod+Return exec lxterminal
+	bindsym $mod+Return exec --no-startup-id lxterminal
+# Floating Terminal
+	bindsym $mod+Shift+Return [title="Floatation_Device"] scratchpad show; [title="Floatation_Device"] move position center
 
 # kill focused window
 	bindsym $mod+q kill
 
 # start rofi (a program launcher)
-	bindsym $mod+space exec rofi -show combi
+	bindsym $mod+space exec --no-startup-id rofi -show combi
 # start rofi with drun
-	bindsym $mod+Shift+space exec rofi -modi drun -show drun
+	bindsym $mod+Shift+space exec --no-startup-id rofi -modi drun -show drun
 
 # change focus
 	bindsym $mod+h focus left
@@ -87,14 +93,14 @@
 	bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-	bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You sure you want to log out?' -b 'Im ready, Daddy' 'i3-msg exit'"
+	bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You sure you want to log out?' -b 'Im ready, Daddy' 'i3-msg exit'"
 
 # Open Htop and Lxtask (Task Managers)
-	bindsym $mod+backslash exec lxterminal -e htop
-	bindsym $mod+Shift+backslash exec lxtask
+	bindsym $mod+backslash exec --no-startup-id lxterminal -e htop
+	bindsym $mod+Shift+backslash exec --no-startup-id lxtask
 
 # Betterlockscreen
-	bindsym $mod+Shift+Delete exec betterlockscreen -l
+	bindsym $mod+Shift+Delete exec --no-startup-id betterlockscreen -l
 
 # Pulse Audio controls
 	#increase sound volume
@@ -115,33 +121,38 @@
 	bindsym XF86AudioPrev exec playerctl previous
 
 # File manager
-	bindsym $mod+r exec lxterminal -e ranger
-	bindsym $mod+f exec pcmanfm
+	bindsym $mod+r exec --no-startup-id lxterminal -e ranger
+	bindsym $mod+f exec --no-startup-id pcmanfm
 
 # Discord is being a bitch for whatever reason and I can't find the solution to it,
 # so I have to add these fucking ugly-ass scripts I made at 4:00 in the morning that may look horrible to a more experienced writer of bash scripts
-	bindsym $mod+shift+m exec /home/cyrano/Scripts/resetmic.sh # This command resets my mic because Discord
-	bindsym $mod+m exec /home/cyrano/Scripts/togglemic.sh # This command mutes my mic because convenience
+	bindsym $mod+shift+m exec --no-startup-id /home/cyrano/Scripts/resetmic.sh # This command resets my mic because Discord
+	bindsym $mod+m exec --no-startup-id /home/cyrano/Scripts/togglemic.sh # This command mutes my mic because convenience
 
 # Loopback script
-	bindsym $mod+n exec /home/cyrano/Scripts/loopback_script.sh
+	bindsym $mod+n exec --no-startup-id /home/cyrano/Scripts/loopback_script.sh
 
 # Pavucontrol
-	bindsym $mod+p exec pavucontrol
+	bindsym $mod+p exec --no-startup-id pavucontrol
 # Alsamixer
-	bindsym $mod+Shift+p exec lxterminal -e alsamixer
+	bindsym $mod+Shift+p exec --no-startup-id lxterminal -e alsamixer
 
 # Screenshot
 	# Fullscreen
-	bindsym Print exec maim -u | xclip -selection clipboard -t image/png
+	bindsym Print exec --no-startup-id maim -u | xclip -selection clipboard -t image/png
 	# Select
-	bindsym Shift+Print exec maim -s -u | xclip -selection clipboard -t image/png
+	bindsym Shift+Print exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 
-# Blink screen
-	bindsym $mod+BackSpace exec /home/cyrano/Scripts/blinkscreen_script.sh
+# Blink screen - requires compton to exist
+	bindsym $mod+BackSpace exec --no-startup-id /home/cyrano/Scripts/blinkscreen_script.sh
 
-# hackerman mode, why not?
-	bindsym $mod+Escape exec /home/cyrano/Scripts/hackerman_script.sh
+# Hackerman mode, why not?
+	bindsym $mod+Escape exec --no-startup-id /home/cyrano/Scripts/hackerman_script.sh
+
+# Call Keepassxc from scratchpad
+	bindsym $mod+x [class="keepassxc"] scratchpad show; [class="keepassxc"] move position center
+
+# Configure Workspaces
 
 	set $workspace1 "1"
 	set $workspace2 "2"
@@ -182,15 +193,13 @@
 	new_window 1pixel
 
 # Configuring OwnCloud
+	for_window [class="ownCloud"] move to workspace $workspace1
 	for_window [class="ownCloud"] floating disable
+	for_window [class="ownCloud"] layout tabbed
 
-# Configure Qutebrowser
-	for_window [class="qutebrowser"] move to workspace $workspace1
-	for_window [class="qutebrowser"] layout tabbed
-
-# Configure Firefox
-	for_window [class="Firefox"] move to workspace $workspace1
-	for_window [class="Firefox"] layout tabbed
+# Configure Waterfox
+	for_window [class="Waterfox"] move to workspace $workspace1
+	for_window [class="Waterfox"] layout tabbed
 
 # Configure Discord
 	for_window [class="discord"] move to workspace $workspace1
@@ -207,9 +216,17 @@
 	for_window [class="Lutris"] layout tabbed
 
 # Configuring Keepassxc
+# Reminder: Keepass is in the startup applications
 	for_window [class="keepassxc"] floating enable
 	for_window [class="keepassxc"] move position center
 	for_window [class="keepassxc"] resize set 800 300
+	for_window [class="keepassxc"] move scratchpad
+	for_window [class="keepassxc"] border pixel 5
+
+# Configure Engrampa Archive Manager
+	for_window [class="Engrampa"] floating enable
+	for_window [class="Engrampa"] move position center
+	for_window [class="Engrampa"] resize set 800 500
 
 # Configure Mpv
 	for_window [class="mpv"] layout tabbed
@@ -217,14 +234,19 @@
 # Configure Feh
 	for_window [class="feh"] layout tabbed
 
+# Configure floating terminal windows
+# Reminder: lxterminal with "Floatation_Device" title is in the startup applications
+	for_window [title="Floatation_Device"] floating enable
+	for_window [title="Floatation_Device"] move position center
+	for_window [title="Floatation_Device"] resize 800 300
+	for_window [title="Floatation_Device"] move scratchpad
+	for_window [title="Floatation_Device"] border pixel 5
+
 # Configure Texmaker
 	for_window [class="Texmaker"] move to workspace $workspace2
 	for_window [class="Texmaker"] layout tabbed
 
 # Configure Steam
-	#for_window [class="Steam"] floating enable
-	#for_window [class="Steam"] move position center
-	#for_window [class="Steam"] resize set 1300 700
 	for_window [class="Steam"] move to workspace $workspace3
 	for_window [class="Steam"] layout tabbed
 
