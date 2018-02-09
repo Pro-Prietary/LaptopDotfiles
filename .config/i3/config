@@ -31,7 +31,6 @@
 	exec --no-startup-id /home/cyrano/Scripts/DLL06B0config_script
 	exec --no-startup-id /home/cyrano/Scripts/Synaptics_TM3096-001_script
 	exec --no-startup-id xfce4-power-manager
-	exec --no-startup-id keepassxc
 	exec --no-startup-id lxterminal -t Floatation_Device
 	#exec --no-startup-id setxkbmap -option caps:escape
 	#exec --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/bestgirl.jpg
@@ -149,9 +148,6 @@
 # Hackerman mode, why not?
 	bindsym $mod+Escape exec --no-startup-id /home/cyrano/Scripts/hackerman_script.sh
 
-# Call Keepassxc from scratchpad
-	bindsym $mod+x [class="keepassxc"] scratchpad show; [class="keepassxc"] move position center
-
 # Configure Workspaces
 
 	set $workspace1 "1"
@@ -214,14 +210,6 @@
 # Configuring Lutris
 	for_window [class="Lutris"] move to workspace $workspace3
 	for_window [class="Lutris"] layout tabbed
-
-# Configuring Keepassxc
-# Reminder: Keepass is in the startup applications
-	for_window [class="keepassxc"] floating enable
-	for_window [class="keepassxc"] move position center
-	for_window [class="keepassxc"] resize set 800 300
-	for_window [class="keepassxc"] move scratchpad
-	for_window [class="keepassxc"] border pixel 5
 
 # Configure Engrampa Archive Manager
 	for_window [class="Engrampa"] floating enable
