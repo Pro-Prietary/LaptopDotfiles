@@ -26,6 +26,7 @@ height = 27
 ;offset-y = 1%
 radius = 6.0
 fixed-center = false
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -36,7 +37,7 @@ line-color = #f00
 border-size = 4
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
@@ -46,9 +47,9 @@ font-0 = fixed:pixelsize=8;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=8;1
 
-modules-left = i3 
-modules-center = xwindow
-modules-right = filesystem xbacklight volume memory cpu wlan battery date xkeyboard  powermenu
+modules-left = i3
+modules-center = xwindow filesystem
+modules-right = xbacklight volume memory cpu wlan battery date xkeyboard
 
 tray-position = right
 tray-padding = 2
@@ -71,7 +72,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -80,7 +81,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
-label-layout = %layout%
+label-layout = 
 label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
@@ -126,6 +127,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
+
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
@@ -151,28 +153,15 @@ label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
 [module/xbacklight]
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = LIT
 
 ; Only applies if <bar> is used
 bar-width = 10
-bar-indicator = |
+bar-indicator = :D
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
@@ -218,7 +207,7 @@ type = internal/network
 interface = wlp6s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected> <ramp-signal>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
@@ -228,11 +217,11 @@ format-disconnected = x
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = x - 
-ramp-signal-1 = ▁ - 
-ramp-signal-2 = ▃ - 
-ramp-signal-3 = ▅ - 
-ramp-signal-4 = ▇ - 
+ramp-signal-0 = x 
+ramp-signal-1 = - ▁ 1
+ramp-signal-2 = - ▃ 2
+ramp-signal-3 = - ▅ 3
+ramp-signal-4 = - ▇ 4 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/title]
@@ -263,7 +252,7 @@ label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = "🔇"
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = MUTED
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -274,7 +263,7 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = :D
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2

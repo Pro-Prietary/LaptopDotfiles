@@ -204,8 +204,13 @@
 # Configure Audacity
 	for_window [class="Audacity"] layout tabbed
 
-#Configure Kdenlive
+# Configure Kdenlive
 	for_window [class="kdenlive"] layout tabbed
+
+# Configuring Keepassxc
+	for_window [class="keepassxc"] floating enable
+	for_window [class="keepassxc"] move position center
+	for_window [class="keepassxc"] resize set 800 300
 
 # Configuring Lutris
 	for_window [class="Lutris"] move to workspace $workspace3
