@@ -24,6 +24,7 @@
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id betterlockscreen -u /home/cyrano/Pictures/Background_Pictures && betterlockscreen -w dimblur
 	exec_always --no-startup-id compton -f
+	exec --no-startup-id syndaemon -i 0.5 -t -K -R -d
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
 	exec --no-startup-id parcellite
@@ -98,8 +99,8 @@
 	bindsym $mod+backslash exec --no-startup-id lxterminal -e htop
 	bindsym $mod+Shift+backslash exec --no-startup-id lxtask
 
-# Betterlockscreen
-	bindsym $mod+Shift+Delete exec --no-startup-id betterlockscreen -l
+# i3lock
+	bindsym $mod+Shift+Delete exec --no-startup-id IconLocker.sh
 
 # Pulse Audio controls
 	#increase sound volume
