@@ -9,7 +9,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #00000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -161,7 +161,7 @@ label = LIT
 
 ; Only applies if <bar> is used
 bar-width = 10
-bar-indicator = :D
+bar-indicator = █
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
@@ -252,7 +252,7 @@ label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = "🔇"
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = MUTED
+label-muted = ═SOUND IS MUTED═
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -263,7 +263,7 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = :D
+bar-volume-indicator = █
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
