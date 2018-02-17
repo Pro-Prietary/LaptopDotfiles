@@ -96,11 +96,12 @@
 	bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You sure you want to log out?' -b 'Im ready, Daddy' 'i3-msg exit'"
 
 # Open Htop and Lxtask (Task Managers)
-	bindsym $mod+backslash exec --no-startup-id lxterminal -e htop
-	bindsym $mod+Shift+backslash exec --no-startup-id lxtask
+	bindsym $mod+backslash exec --no-startup-id vtop --theme seti
+	bindsym $mod+Shift+backslash exec --no-startup-id lxterminal -e htop
+	bindsym $mod+Ctrl+backslash exec --no-startup-id lxtask
 
 # i3lock
-	bindsym $mod+Shift+Delete exec --no-startup-id IconLocker.sh
+	bindsym $mod+Shift+Delete exec --no-startup-id IconLocker
 
 # Pulse Audio controls
 	#increase sound volume

@@ -13,7 +13,6 @@ Things you may need if you'd like this to work out of the box
 - polkit-gnome
 - i3-gaps
 - betterlockscreen
-- i3-colorgaps
 - ranger
 - pcmanfm
 - xfce4-power-manager
@@ -38,5 +37,9 @@ Things you may need if you'd like this to work out of the box
 - networkmanager (nm-applet)
 - xclip
 - Reddit Terminal Viewer (rtv)
+- scrot
+- imagemagick
+- vtop
+- htop
 
 Will edit if there's any more I've overlooked
