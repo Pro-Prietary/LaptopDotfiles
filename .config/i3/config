@@ -22,8 +22,8 @@
 	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
 	exec_always --no-startup-id home/cyrano/Scripts/screenlayout_script.sh
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-	exec_always --no-startup-id betterlockscreen -u /home/cyrano/Pictures/Background_Pictures && betterlockscreen -w dimblur
 	exec_always --no-startup-id compton -f
+	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
 	exec --no-startup-id syndaemon -i 0.5 -t -K -R -d
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
@@ -34,7 +34,6 @@
 	exec --no-startup-id xfce4-power-manager
 	exec --no-startup-id lxterminal -t Floatation_Device
 	#exec --no-startup-id setxkbmap -option caps:escape
-	#exec --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/bestgirl.jpg
 
 # start a terminal
 	bindsym $mod+Return exec --no-startup-id lxterminal
