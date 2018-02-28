@@ -24,7 +24,7 @@
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id compton -f
 	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
-	exec --no-startup-id syndaemon -i 0.5 -t -K -R -d
+	exec --no-startup-id syndaemon -i 2 -t -K -R -d
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
 	exec --no-startup-id parcellite
@@ -94,9 +94,9 @@
 # exit i3 (logs you out of your X session)
 	bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You sure you want to log out?' -b 'Im ready, Daddy' 'i3-msg exit'"
 
-# Open Htop and Lxtask (Task Managers)
-	bindsym $mod+backslash exec --no-startup-id lxterminal -e vtop --theme wizard
-	bindsym $mod+Shift+backslash exec --no-startup-id lxterminal -e htop
+# Open Htop, Lxtask and Vtop (Task Managers)
+	bindsym $mod+Shift+backslash exec --no-startup-id lxterminal -e vtop --theme wizard
+	bindsym $mod+backslash exec --no-startup-id lxterminal -e htop
 	bindsym $mod+Ctrl+backslash exec --no-startup-id lxtask
 
 # i3lock
