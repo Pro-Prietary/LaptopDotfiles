@@ -36,9 +36,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=7;1
-font-1 = unifont:fontformat=truetype:size=7:antialias=false;0
-font-2 = siji:pixelsize=7;1
+font-0 = Ubuntu:pixelsize=8;1
+font-1 = Impact:fontformat=truetype:size=10:antialias=false;0
+font-2 = Impact:fontformat=bold:size=10;1
 
 modules-left = i3
 modules-center = xwindow filesystem
@@ -155,13 +155,13 @@ label = LIT
 
 ; Only applies if <bar> is used
 bar-width = 10
-bar-indicator = █
+bar-indicator = #
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
-bar-fill = ─
+bar-fill = ~
 bar-fill-font = 2
 bar-fill-foreground = #9f78e1
-bar-empty = ─
+bar-empty = ~
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
@@ -174,19 +174,19 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format = <ramp-coreload>
-format-prefix = "CPU - "
+format-prefix = "CPU "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
 
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
+ramp-coreload-0 = ▪1
+ramp-coreload-1 = ▪2
+ramp-coreload-2 = ▪3
+ramp-coreload-3 = ▪4
+ramp-coreload-4 = ▪5
+ramp-coreload-5 = ▪6
+ramp-coreload-6 = ▪7
+ramp-coreload-7 = ▪8
 
 [module/memory]
 type = internal/memory
@@ -257,11 +257,11 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = █
+bar-volume-indicator = #
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = ~
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = ~
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
