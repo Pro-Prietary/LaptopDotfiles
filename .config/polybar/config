@@ -37,8 +37,8 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = Ubuntu:pixelsize=8;1
-font-1 = Impact:fontformat=truetype:size=10:antialias=false;0
-font-2 = Impact:fontformat=bold:size=10;1
+font-1 = Ubuntu:fontformat=truetype:size=10:antialias=false;0
+font-2 = icomoon:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow filesystem
@@ -179,14 +179,14 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
 
-ramp-coreload-0 = ▪1
-ramp-coreload-1 = ▪2
-ramp-coreload-2 = ▪3
-ramp-coreload-3 = ▪4
-ramp-coreload-4 = ▪5
-ramp-coreload-5 = ▪6
-ramp-coreload-6 = ▪7
-ramp-coreload-7 = ▪8
+ramp-coreload-0 = 
+ramp-coreload-1 = 
+ramp-coreload-2 = 
+ramp-coreload-3 = 
+ramp-coreload-4 = 
+ramp-coreload-5 = 
+ramp-coreload-6 = 
+ramp-coreload-7 = 
 
 [module/memory]
 type = internal/memory
@@ -211,11 +211,11 @@ format-disconnected = x
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = x 
-ramp-signal-1 = - ▁ 1
-ramp-signal-2 = - ▃ 2
-ramp-signal-3 = - ▅ 3
-ramp-signal-4 = - ▇ 4 
+ramp-signal-0 = -  0 
+ramp-signal-1 = -  1
+ramp-signal-2 = -  2
+ramp-signal-3 = -  3
+ramp-signal-4 = -  4 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/title]
@@ -271,16 +271,16 @@ battery = BAT0
 adapter = AC
 full-at = 90
 
-label-charging = CHA - %percentage%%
-label-discharging = DIS - %percentage%%
+label-charging = %percentage%%
+label-discharging = %percentage%%
 
-format-charging = <label-charging>
+format-charging = <ramp-capacity> - <label-charging> 
 format-charging-underline = #63ff5e
 
-format-discharging = <label-discharging>
+format-discharging = <ramp-capacity> - <label-discharging>
 format-discharging-underline = #ff5e5e
 
-format-full-prefix = ""
+;format-full-prefix = "FUL - "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
