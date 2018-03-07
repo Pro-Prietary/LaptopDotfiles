@@ -22,9 +22,9 @@
 	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
 	exec_always --no-startup-id home/cyrano/Scripts/screenlayout_script.sh
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-	exec_always --no-startup-id compton -f
 	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
-	exec --no-startup-id syndaemon -i 2 -t -K -R -d
+	exec_always --no-startup-id compton -f
+	exec --no-startup-id syndaemon -i 1 -t -K -R -d
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
 	exec --no-startup-id parcellite
@@ -145,9 +145,6 @@
 
 # Blink screen - requires compton to exist
 	bindsym $mod+BackSpace exec --no-startup-id /home/cyrano/Scripts/blinkscreen_script.sh
-
-# Hackerman mode, why not?
-	bindsym $mod+Escape exec --no-startup-id /home/cyrano/Scripts/hackerman_script.sh
 
 # Configure Workspaces
 
