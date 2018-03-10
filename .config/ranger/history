@@ -1,28 +1,3 @@
-delete
-delete r
-search sd
-open_with 
-rename DLL06B0config_script
-search .mpv
-search mpv
-search vis
-search cava
-search desktop
-open_with vimiv
-rename 0495915424.pdf
-search .confi
-search config
-search rc
-search mailcap
-search share
-search doc
-search poly
-search polybar
-search vim
-search .conky
-search Des
-search level
-search q
 search steam
 mkdir backup
 rename drifter.png
@@ -41,10 +16,35 @@ search cd
 cd Desktop/LaptopDotfiles
 
 search .Xresources
-search 
 cd /home/cyrano/Desktop/Testing Grounds/LaptopDotfiles
-search .config
 search .ssh
 search .confil
-search i3
 search Scr
+search .config
+search i3
+search Desktop
+touch
+rename When_You_Already_Know_What_Happens.mp4
+rename Kingsman_Secret_Service.mp4
+mkdir Spongebob
+rename Survival_of_the_idiots.mkv
+rename Wet_Painters.mp4
+rename KND_OPERATION_ZERO.mkv
+rename The_Emoji_Movie.mp4
+open_with 
+search 
+search ppic
+search pic
+search games
+search zapm
+rename primerl_script
+wq
+edit
+shell  %s
+search Gam
+search Wine
+search exe
+mkdir Cogmind7DRL
+search sync
+search etc
+search systemd

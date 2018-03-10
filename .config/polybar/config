@@ -42,8 +42,8 @@ font-2 = icomoon:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=10=1
 
 modules-left = powermenu i3
-modules-center = cmus filesystem
-modules-right = xbacklight volume memory cpu wifi battery date xkeyboard
+modules-center = cmus
+modules-right = filesystem xbacklight volume memory cpu wifi info-redshift-temp battery date xkeyboard
 
 tray-position = right
 tray-padding = 2
@@ -291,6 +291,7 @@ full-at = 90
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
+label-full = %percentage%%
 
 format-charging = <ramp-capacity> - <label-charging> 
 format-charging-underline = #63ff5e
@@ -298,9 +299,9 @@ format-charging-underline = #63ff5e
 format-discharging = <ramp-capacity> - <label-discharging>
 format-discharging-underline = #ff5e5e
 
-;format-full-prefix = "FUL - "
+format-full = <ramp-capacity> - <label-full>
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-underline = #AE2D59
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -319,7 +320,7 @@ format-spacing = 1
 label-open = 
 label-open-underline = #820707
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = 
 label-close-underline = #9D0A00
 label-close-foreground = ${colors.secondary}
 label-separator = |
@@ -333,10 +334,10 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = shutdown -h now
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 

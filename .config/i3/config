@@ -24,6 +24,7 @@
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
 	exec_always --no-startup-id compton -f
+	exec_always --no-startup-id xset r rate 250 30
 	exec --no-startup-id syndaemon -i 1 -t -K -R -d
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
@@ -33,10 +34,11 @@
 	exec --no-startup-id /home/cyrano/Scripts/Synaptics_TM3096-001_script
 	exec --no-startup-id xfce4-power-manager
 	exec --no-startup-id lxterminal -t Floatation_Device
-	#exec --no-startup-id setxkbmap -option caps:escape
+	exec --no-startup-id setxkbmap -option caps:swapescape
 
 # start a terminal
 	bindsym $mod+Return exec --no-startup-id lxterminal
+
 # Floating Terminal
 	bindsym $mod+Shift+Return [title="Floatation_Device"] scratchpad show; [title="Floatation_Device"] move position center
 
@@ -208,7 +210,7 @@
 # Configuring Keepassxc
 	for_window [class="keepassxc"] floating enable
 	for_window [class="keepassxc"] move position center
-	for_window [class="keepassxc"] resize set 800 300
+	for_window [class="keepassxc"] resize set 1000 600
 
 # Configuring Lutris
 	for_window [class="Lutris"] move to workspace $workspace3
@@ -229,7 +231,7 @@
 # Reminder: lxterminal with "Floatation_Device" title is in the startup applications
 	for_window [title="Floatation_Device"] floating enable
 	for_window [title="Floatation_Device"] move position center
-	for_window [title="Floatation_Device"] resize 800 300
+	for_window [title="Floatation_Device"] resize set 800 300
 	for_window [title="Floatation_Device"] move scratchpad
 	for_window [title="Floatation_Device"] border pixel 5
 
@@ -243,12 +245,12 @@
 
 # Configure all WINE games
 	for_window [class="Wine"] floating enable
-	for_window [class="Wine"] move position center
-	for_window [class="Wine"] resize set 1300 700
 	for_window [class="Wine"] move to workspace $workspace3
+	for_window [class="Wine"] move position center
+	#for_window [class="Wine"] resize set 1300 700
 
 # Gaps configuration
-gaps inner 10
+gaps inner 5
 
 # Main colors
 set $bg-color 	         #2f343f
