@@ -32,9 +32,9 @@
 	exec --no-startup-id nm-applet
 	exec --no-startup-id /home/cyrano/Scripts/DLL06B0config_script
 	exec --no-startup-id /home/cyrano/Scripts/Synaptics_TM3096-001_script
-	exec --no-startup-id xfce4-power-manager
 	exec --no-startup-id lxterminal -t Floatation_Device
-	exec --no-startup-id setxkbmap -option caps:swapescape
+	exec --no-startup-id setxkbmap -option caps:escape
+#	exec --no-startup-id setxkbmap -option caps:swapescape
 
 # start a terminal
 	bindsym $mod+Return exec --no-startup-id lxterminal
