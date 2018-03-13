@@ -15,7 +15,7 @@ Things you may need if you'd like this to work out of the box
 - betterlockscreen
 - ranger
 - pcmanfm
-- xfce4-power-manager
+- tlp
 - lxappearance
 - lx-task
 - maim
