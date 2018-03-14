@@ -1,24 +1,28 @@
-# _       _________   _______  _______  _        _______ _________ _        _______  _______  _______  _______ 
-#( (    /|\__    _/  (  ____ )(  ____ \( \      (  ____ )\__   __/( (    /|(  ___  )(  ____ \(  ___  )(  ____ \
-#|  \  ( |   )  (    | (    )|| (    \/| (      | (    )|   ) (   |  \  ( || (   ) || (    \/| (   ) || (    \/
-#|   \ | |   |  |    | (____)|| (__    | |      | (____)|   | |   |   \ | || |   | || (_____ | (___) || (_____ 
-#| (\ \) |   |  |    |  _____)|  __)   | |      |  _____)   | |   | (\ \) || |   | |(_____  )|  ___  |(_____  )
-#| | \   |   |  |    | (      | (      | |      | (         | |   | | \   || |   | |      ) || (   ) |      ) |
-#| )  \  ||\_)  )    | )      | (____/\| (____/\| )      ___) (___| )  \  || (___) |/\____) || )   ( |/\____) |
-#|/    )_)(____/     |/       (_______/(_______/|/       \_______/|/    )_)(_______)\_______)|/     \|\_______)
+###== NJ Pelpinosas' i3 configuration file ===###
+###== Github: https://github.com/Pro-Prietary ===###
+###== Email: njpelpinosas@gmail.com ===###
 
-# i3 config file                                                                                                             
-
-# Set the mod key
+###== Definitions ===###
 	set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
+	set $term lxterminal
+	set $workspace1 "1"
+	set $workspace2 "2"
+	set $workspace3 "3"
+	set $workspace4 "4"
+	set $workspace5 "5"
+	set $workspace6 "6"
+	set $workspace7 "7"
+	set $workspace8 "8"
+	set $workspace9 "9"
+	set $workspace0 "10"
 	font pango:monospace 8
+	# Use Mouse+$mod to drag floating windows to their wanted position
+	floating_modifier $mod 
+	# Gaps configuration
+	hide_edge_borders both
+	gaps inner 15
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-	floating_modifier $mod
-
-# Startup applications
+###== Startup applications ===###
 	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
 	exec_always --no-startup-id home/cyrano/Scripts/screenlayout_script.sh
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -32,136 +36,124 @@
 	exec --no-startup-id nm-applet
 	exec --no-startup-id /home/cyrano/Scripts/DLL06B0config_script
 	exec --no-startup-id /home/cyrano/Scripts/Synaptics_TM3096-001_script
-	exec --no-startup-id lxterminal -t Floatation_Device
+	exec --no-startup-id $term -t Floatation_Device
 	exec --no-startup-id setxkbmap -option caps:escape
-#	exec --no-startup-id setxkbmap -option caps:swapescape
+	#exec --no-startup-id setxkbmap -option caps:swapescape
 
-# start a terminal
-	bindsym $mod+Return exec --no-startup-id lxterminal
+###=== Keybindings ===###
+	# start a terminal
+	bindsym $mod+Return exec --no-startup-id $term
 
-# Floating Terminal
+	# Floating Terminal
 	bindsym $mod+Shift+Return [title="Floatation_Device"] scratchpad show; [title="Floatation_Device"] move position center
 
-# kill focused window
+	# kill focused window
 	bindsym $mod+q kill
 
-# start rofi (a program launcher)
+	# start rofi (a program launcher)
 	bindsym $mod+space exec --no-startup-id rofi -show combi
-# start rofi with drun
-	bindsym $mod+Shift+space exec --no-startup-id rofi -modi drun -show drun
 
-# change focus
+	# change focus
 	bindsym $mod+h focus left
 	bindsym $mod+j focus down
 	bindsym $mod+k focus up
 	bindsym $mod+l focus right
 
-# move focused window
+	# move focused window
 	bindsym $mod+Shift+h move left
 	bindsym $mod+Shift+j move down
 	bindsym $mod+Shift+k move up
 	bindsym $mod+Shift+l move right
 
-# resize window
+	# resize window
 	bindsym $mod+Shift+y resize shrink width 10 px or 10ppt
 	bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 	bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
 	bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 
-# split in horizontal orientation
+	# split in horizontal orientation
 	bindsym $mod+Right split h
 
-# split in vertical orientation
+	# split in vertical orientation
 	bindsym $mod+Down split v
 
-# enter fullscreen mode for the focused container
+	# enter fullscreen mode for the focused container
 	bindsym $mod+Shift+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)...(but noone uses stacked)
+	# change container layout (stacked, tabbed, toggle split)...(but noone uses stacked)
 	bindsym $mod+w layout tabbed
 	bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+	# toggle tiling / floating
 	bindsym $mod+Shift+z floating toggle
 
-# change focus between tiling / floating windows
+	# change focus between tiling / floating windows
 	bindsym $mod+z focus mode_toggle
 
-# reload the configuration file
+	# reload the configuration file
 	bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+	# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 	bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
+	# exit i3 (logs you out of your X session)
 	bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You sure you want to log out?' -b 'Im ready, Daddy' 'i3-msg exit'"
 
-# Open Htop, Lxtask and Vtop (Task Managers)
-	bindsym $mod+Shift+backslash exec --no-startup-id lxterminal -e vtop --theme wizard
-	bindsym $mod+backslash exec --no-startup-id lxterminal -e htop
+	# Open Htop, Lxtask and Vtop (Task Managers)
+	bindsym $mod+Shift+backslash exec --no-startup-id $term -e vtop --theme wizard
+	bindsym $mod+backslash exec --no-startup-id $term -e htop
 	bindsym $mod+Ctrl+backslash exec --no-startup-id lxtask
 
-# i3lock
+	# i3lock
 	bindsym $mod+Shift+Delete exec --no-startup-id IconLocker
 
-# Pulse Audio controls
-	#increase sound volume
+	# Pulse Audio controls
 	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-	#decrease sound volume
 	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-	#mute sound
 	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
 
-# Screen brightness controls
+	# Screen brightness controls
 	bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 	bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
-# Media player controls
+	# Media player controls
 	bindsym $mod+XF86AudioPlay exec playerctl play
 	bindsym XF86AudioPause exec playerctl pause
 	bindsym XF86AudioNext exec playerctl next
 	bindsym XF86AudioPrev exec playerctl previous
 
-# File manager
-	bindsym $mod+r exec --no-startup-id lxterminal -e ranger
+	# File manager
+	bindsym $mod+r exec --no-startup-id $term -e ranger
 	bindsym $mod+f exec --no-startup-id pcmanfm
 
-# Discord is being a bitch for whatever reason and I can't find the solution to it,
-# so I have to add these fucking ugly-ass scripts I made at 4:00 in the morning that may look horrible to a more experienced writer of bash scripts
-	bindsym $mod+shift+m exec --no-startup-id /home/cyrano/Scripts/resetmic.sh # This command resets my mic because Discord
-	bindsym $mod+m exec --no-startup-id /home/cyrano/Scripts/togglemic.sh # This command mutes my mic because convenience
+	# Discord is being a bitch for whatever reason and I can't find the solution to it,
+	# so I have to add these fucking ugly-ass scripts I made at 4:00 in the morning that may look horrible to a more experienced writer of bash scripts
+	bindsym $mod+shift+m exec --no-startup-id /home/cyrano/Scripts/resetmic.sh
+	bindsym $mod+m exec --no-startup-id /home/cyrano/Scripts/togglemic.sh
 
-# Loopback script
+	# Loopback script
 	bindsym $mod+n exec --no-startup-id /home/cyrano/Scripts/loopback_script.sh
 
-# Pavucontrol
+	# Pavucontrol
 	bindsym $mod+p exec --no-startup-id pavucontrol
-# Alsamixer
-	bindsym $mod+Shift+p exec --no-startup-id lxterminal -e alsamixer
 
-# Screenshot
-	# Fullscreen
+	# Alsamixer
+	bindsym $mod+Shift+p exec --no-startup-id $term -e alsamixer
+
+	# Screenshot
 	bindsym Print exec --no-startup-id maim -u | xclip -selection clipboard -t image/png
-	# Select
 	bindsym Shift+Print exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 
-# Blink screen - requires compton to exist
+	# Blink screen - requires compton to exist
 	bindsym $mod+BackSpace exec --no-startup-id /home/cyrano/Scripts/blinkscreen_script.sh
 
-# Configure Workspaces
+	# Gaps controls
+	bindsym $mod+bracketright gaps inner current plus 5
+	bindsym $mod+bracketleft gaps inner current minus 5
+	bindsym $mod+g gaps inner all set 15; gaps outer all set 15
+	bindsym $mod+Shift+g gaps inner all set 0; gaps outer all set 0
 
-	set $workspace1 "1"
-	set $workspace2 "2"
-	set $workspace3 "3"
-	set $workspace4 "4"
-	set $workspace5 "5"
-	set $workspace6 "6"
-	set $workspace7 "7"
-	set $workspace8 "8"
-	set $workspace9 "9"
-	set $workspace0 "10"
-
-# switch to workspace
+	# switch to workspace
 	bindsym $mod+1 workspace $workspace1
 	bindsym $mod+2 workspace $workspace2
 	bindsym $mod+3 workspace $workspace3
@@ -173,7 +165,7 @@
 	bindsym $mod+9 workspace $workspace9
 	bindsym $mod+0 workspace $workspace0
 
-# move focused container to workspace
+	# move focused container to workspace
 	bindsym $mod+Shift+1 move container to workspace $workspace1
 	bindsym $mod+Shift+2 move container to workspace $workspace2
 	bindsym $mod+Shift+3 move container to workspace $workspace3
@@ -185,101 +177,82 @@
 	bindsym $mod+Shift+9 move container to workspace $workspace9
 	bindsym $mod+Shift+0 move container to workspace $workspace0
 
-# Configuring ALL types of windows
+###=== Window Configurations ===###
+	# Configuring ALL types of windows
 	new_window 1pixel
 
-# Configuring OwnCloud
+	# Configuring OwnCloud
 	for_window [class="ownCloud"] move to workspace $workspace1
 	for_window [class="ownCloud"] floating disable
 	for_window [class="ownCloud"] layout tabbed
 
-# Configure Waterfox
+	# Configure Waterfox
 	for_window [class="Waterfox"] move to workspace $workspace1
 	for_window [class="Waterfox"] layout tabbed
 
-# Configure Discord
+	# Configure Discord
 	for_window [class="discord"] move to workspace $workspace1
 	for_window [class="discord"] layout tabbed
 
-# Configure Audacity
+	# Configure Audacity
 	for_window [class="Audacity"] layout tabbed
 
-# Configure Kdenlive
+	# Configure Kdenlive
 	for_window [class="kdenlive"] layout tabbed
 
-# Configuring Keepassxc
+	# Configuring Keepassxc
 	for_window [class="keepassxc"] floating enable
 	for_window [class="keepassxc"] move position center
 	for_window [class="keepassxc"] resize set 1000 600
 
-# Configuring Lutris
+	# Configuring Lutris
 	for_window [class="Lutris"] move to workspace $workspace3
 	for_window [class="Lutris"] layout tabbed
 
-# Configure Engrampa Archive Manager
+	# Configure Engrampa Archive Manager
 	for_window [class="Engrampa"] floating enable
 	for_window [class="Engrampa"] move position center
 	for_window [class="Engrampa"] resize set 800 500
 
-# Configure Mpv
+	# Configure Mpv
 	for_window [class="mpv"] layout tabbed
 
-# Configure Feh
+	# Configure Feh
 	for_window [class="feh"] layout tabbed
 
-# Configure floating terminal windows
-# Reminder: lxterminal with "Floatation_Device" title is in the startup applications
+	# Configure floating terminal windows
+	# Reminder: lxterminal with "Floatation_Device" title is in the startup applications
 	for_window [title="Floatation_Device"] floating enable
 	for_window [title="Floatation_Device"] move position center
-	for_window [title="Floatation_Device"] resize set 800 300
+	for_window [title="Floatation_Device"] resize set 800 500
 	for_window [title="Floatation_Device"] move scratchpad
 	for_window [title="Floatation_Device"] border pixel 5
 
-# Configure Texmaker
+	# Configure Texmaker
 	for_window [class="Texmaker"] move to workspace $workspace2
 	for_window [class="Texmaker"] layout tabbed
 
-# Configure Steam
+	# Configure Steam
 	for_window [class="Steam"] move to workspace $workspace3
 	for_window [class="Steam"] layout tabbed
 
-# Configure all WINE games
+	# Configure all WINE games
 	for_window [class="Wine"] floating enable
 	for_window [class="Wine"] move to workspace $workspace3
 	for_window [class="Wine"] move position center
 	#for_window [class="Wine"] resize set 1300 700
 
-# Gaps configuration
-gaps inner 5
+###=== Color Configuration ===###
+	# Main colors
+	set $bg-color 	         #2f343f
+	set $inactive-bg-color   #2f343f
+	set $text-color          #f3f4f5
+	set $inactive-text-color #676E7D
+	set $urgent-bg-color     #E53935
 
-# Main colors
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           #18326b	       $text-color          #2f343f
-client.unfocused        $inactive-bg-color $inactive-bg-color  $inactive-text-color #2f343f
-client.focused_inactive $inactive-bg-color $inactive-bg-color  $inactive-text-color #2f343f
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #2f343f
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#	#status_command i3status
-#	#status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#	colors {
-#		background $bg-color
-#	    	separator #757575
-#		#                  border             background         text
-#		focused_workspace  $bg-color          $bg-color          $text-color
-#		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-#	}
-#	font pango: Ubuntu 8
-#	position top	
-#}
+	# window colors
+	#                       border              background         text                 indicator
+	client.focused          $bg-color           #18326b	       $text-color          #2f343f
+	client.unfocused        $inactive-bg-color $inactive-bg-color  $inactive-text-color #2f343f
+	client.focused_inactive $inactive-bg-color $inactive-bg-color  $inactive-text-color #2f343f
+	client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #2f343f
