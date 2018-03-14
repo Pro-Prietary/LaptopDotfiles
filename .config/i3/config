@@ -3,8 +3,11 @@
 ###== Email: njpelpinosas@gmail.com ===###
 
 ###== Definitions ===###
+	# Mod key
 	set $mod Mod4
+	# Main terminal
 	set $term lxterminal
+	# Setting workspace names
 	set $workspace1 "1"
 	set $workspace2 "2"
 	set $workspace3 "3"
@@ -15,6 +18,7 @@
 	set $workspace8 "8"
 	set $workspace9 "9"
 	set $workspace0 "10"
+	# Font
 	font pango:monospace 8
 	# Use Mouse+$mod to drag floating windows to their wanted position
 	floating_modifier $mod 
@@ -116,20 +120,12 @@
 	bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 	bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
-	# Media player controls
-	bindsym $mod+XF86AudioPlay exec playerctl play
-	bindsym XF86AudioPause exec playerctl pause
-	bindsym XF86AudioNext exec playerctl next
-	bindsym XF86AudioPrev exec playerctl previous
-
 	# File manager
 	bindsym $mod+r exec --no-startup-id $term -e ranger
 	bindsym $mod+f exec --no-startup-id pcmanfm
 
-	# Discord is being a bitch for whatever reason and I can't find the solution to it,
-	# so I have to add these fucking ugly-ass scripts I made at 4:00 in the morning that may look horrible to a more experienced writer of bash scripts
 	bindsym $mod+shift+m exec --no-startup-id /home/cyrano/Scripts/resetmic.sh
-	bindsym $mod+m exec --no-startup-id /home/cyrano/Scripts/togglemic.sh
+	bindsym $mod+m exec --no-startup-id amixer set Capture toggle
 
 	# Loopback script
 	bindsym $mod+n exec --no-startup-id /home/cyrano/Scripts/loopback_script.sh
@@ -144,8 +140,13 @@
 	bindsym Print exec --no-startup-id maim -u | xclip -selection clipboard -t image/png
 	bindsym Shift+Print exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 
-	# Blink screen - requires compton to exist
+	# Blink screen - requires compton to use
 	bindsym $mod+BackSpace exec --no-startup-id /home/cyrano/Scripts/blinkscreen_script.sh
+
+	# Cmus
+	bindsym XF86AudioPause exec --no-startup-id ~/Scripts/music_check_script.sh
+	bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
+	bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 
 	# Gaps controls
 	bindsym $mod+bracketright gaps inner current plus 5
@@ -181,10 +182,13 @@
 	# Configuring ALL types of windows
 	new_window 1pixel
 
-	# Configuring OwnCloud
+	# Configure OwnCloud
 	for_window [class="ownCloud"] move to workspace $workspace1
 	for_window [class="ownCloud"] floating disable
 	for_window [class="ownCloud"] layout tabbed
+
+	# Configure Cmus
+	for_window [title="cmus"] move to workspace $workspace0
 
 	# Configure Waterfox
 	for_window [class="Waterfox"] move to workspace $workspace1
@@ -200,12 +204,12 @@
 	# Configure Kdenlive
 	for_window [class="kdenlive"] layout tabbed
 
-	# Configuring Keepassxc
+	# Configure Keepassxc
 	for_window [class="keepassxc"] floating enable
 	for_window [class="keepassxc"] move position center
 	for_window [class="keepassxc"] resize set 1000 600
 
-	# Configuring Lutris
+	# Configure Lutris
 	for_window [class="Lutris"] move to workspace $workspace3
 	for_window [class="Lutris"] layout tabbed
 
@@ -240,7 +244,6 @@
 	for_window [class="Wine"] floating enable
 	for_window [class="Wine"] move to workspace $workspace3
 	for_window [class="Wine"] move position center
-	#for_window [class="Wine"] resize set 1300 700
 
 ###=== Color Configuration ===###
 	# Main colors
