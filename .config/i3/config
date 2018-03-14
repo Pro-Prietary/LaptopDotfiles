@@ -147,6 +147,9 @@
 	bindsym XF86AudioPause exec --no-startup-id ~/Scripts/music_check_script.sh
 	bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
 	bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
+	bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id cmus-remote -v +10%
+	bindsym $mod+XF86AudioLowerVolume exec --no-startup-id cmus-remote -v -10%
+	bindsym $mod+Escape exec --no-startup-id pkill cmus
 
 	# Gaps controls
 	bindsym $mod+bracketright gaps inner current plus 5
