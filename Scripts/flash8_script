@@ -1,3 +1,0 @@
-#!/bin/bash
-
-WINEPREFIX="/home/cyrano/WinePrograms/Flash8" wine /home/cyrano/WinePrograms/Flash8/drive_c/Program\ Files/Flash8Portable.exe

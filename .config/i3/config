@@ -28,14 +28,14 @@
 
 ###== Startup applications ===###
 	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
-	exec_always --no-startup-id home/cyrano/Scripts/screenlayout_script.sh
+	exec_always --no-startup-id ~/.scripts/screenlayout_script.sh
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id xset r rate 250 30
-	exec_always --no-startup-id /home/cyrano/Scripts/DLL06B0config_script
-	exec_always --no-startup-id /home/cyrano/Scripts/Synaptics_TM3096-001_script
-	#exec_always --no-startup-id compton -f
-	#exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
-	#exec --no-startup-id setxkbmap -option caps:swapescape
+	exec_always --no-startup-id ~/.scripts/DLL06B0config_script.sh
+	exec_always --no-startup-id ~/.scripts/Synaptics_TM3096-001_script.sh
+	exec_always --no-startup-id compton -f
+	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
+	#exec --no-startup-id mpv --border --video-unscaled=no --video-zoom=0.18 --wid=0 --loop-file=inf --speed=1.0 --mute=yes ~/.config/i3/Eclipse.gif
 	exec --no-startup-id syndaemon -i 1 -t -K -R -d
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
@@ -43,7 +43,6 @@
 	exec --no-startup-id nm-applet
 	exec --no-startup-id $term -t Floatation_Device
 	exec --no-startup-id setxkbmap -option caps:escape
-	exec --no-startup-id mpv --border --video-unscaled=no --video-zoom=0.18 --wid=0 --loop-file=inf --speed=1.0 --mute=yes ~/.config/i3/Eclipse.gif
 	
 	###=== Keybindings ===###
 	# start a terminal
@@ -110,7 +109,7 @@
 	bindsym $mod+Ctrl+backslash exec --no-startup-id lxtask
 
 	# i3lock
-	bindsym $mod+Shift+Delete exec --no-startup-id IconLocker
+	bindsym $mod+Shift+Delete exec --no-startup-id IconLocker.sh
 
 	# Pulse Audio controls
 	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
@@ -125,11 +124,11 @@
 	bindsym $mod+r exec --no-startup-id $term -e ranger
 	bindsym $mod+f exec --no-startup-id pcmanfm
 
-	bindsym $mod+shift+m exec --no-startup-id /home/cyrano/Scripts/resetmic.sh
+	bindsym $mod+shift+m exec --no-startup-id ~/.scripts/resetmic.sh
 	bindsym $mod+m exec --no-startup-id amixer set Capture toggle
 
 	# Loopback script
-	bindsym $mod+n exec --no-startup-id /home/cyrano/Scripts/loopback_script.sh
+	bindsym $mod+n exec --no-startup-id ~/.scripts/loopback_script.sh
 
 	# Pavucontrol
 	bindsym $mod+p exec --no-startup-id pavucontrol
@@ -142,10 +141,10 @@
 	bindsym Shift+Print exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 
 	# Blink screen - requires compton to use
-	bindsym $mod+BackSpace exec --no-startup-id /home/cyrano/Scripts/blinkscreen_script.sh
+	bindsym $mod+BackSpace exec --no-startup-id ~/.scripts/blinkscreen_script.sh
 
 	# Cmus
-	bindsym XF86AudioPause exec --no-startup-id ~/Scripts/music_check_script.sh
+	bindsym XF86AudioPause exec --no-startup-id ~/.scripts/music_check_script.sh
 	bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
 	bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 	bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id cmus-remote -v +10%
