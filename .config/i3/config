@@ -30,21 +30,22 @@
 	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
 	exec_always --no-startup-id home/cyrano/Scripts/screenlayout_script.sh
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
-	exec_always --no-startup-id compton -f
 	exec_always --no-startup-id xset r rate 250 30
+	exec_always --no-startup-id /home/cyrano/Scripts/DLL06B0config_script
+	exec_always --no-startup-id /home/cyrano/Scripts/Synaptics_TM3096-001_script
+	#exec_always --no-startup-id compton -f
+	#exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
+	#exec --no-startup-id setxkbmap -option caps:swapescape
 	exec --no-startup-id syndaemon -i 1 -t -K -R -d
 	exec --no-startup-id redshift
 	exec --no-startup-id owncloud
 	exec --no-startup-id parcellite
 	exec --no-startup-id nm-applet
-	exec --no-startup-id /home/cyrano/Scripts/DLL06B0config_script
-	exec --no-startup-id /home/cyrano/Scripts/Synaptics_TM3096-001_script
 	exec --no-startup-id $term -t Floatation_Device
 	exec --no-startup-id setxkbmap -option caps:escape
-	#exec --no-startup-id setxkbmap -option caps:swapescape
-
-###=== Keybindings ===###
+	exec --no-startup-id mpv --border --video-unscaled=no --video-zoom=0.18 --wid=0 --loop-file=inf --speed=1.0 --mute=yes ~/.config/i3/Eclipse.gif
+	
+	###=== Keybindings ===###
 	# start a terminal
 	bindsym $mod+Return exec --no-startup-id $term
 
@@ -149,7 +150,7 @@
 	bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 	bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id cmus-remote -v +10%
 	bindsym $mod+XF86AudioLowerVolume exec --no-startup-id cmus-remote -v -10%
-	bindsym $mod+Escape exec --no-startup-id pkill cmus
+	bindsym $mod+XF86AudioPause exec --no-startup-id pkill cmus
 
 	# Gaps controls
 	bindsym $mod+bracketright gaps inner current plus 5
