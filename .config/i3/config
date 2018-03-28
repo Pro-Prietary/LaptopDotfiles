@@ -24,7 +24,7 @@
 	floating_modifier $mod 
 	# Gaps configuration
 	hide_edge_borders both
-	gaps inner 15
+	gaps inner 0
 
 ###== Startup applications ===###
 	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
@@ -156,6 +156,42 @@
 	bindsym $mod+bracketleft gaps inner current minus 5
 	bindsym $mod+g gaps inner all set 15; gaps outer all set 15
 	bindsym $mod+Shift+g gaps inner all set 0; gaps outer all set 0
+
+	# Moving mouse using keypad
+	bindcode $mod+83 exec --no-startup-id xdotool mousemove_relative --polar 270 50
+	bindcode $mod+88 exec --no-startup-id xdotool mousemove_relative --polar 180 50
+	bindcode $mod+80 exec --no-startup-id xdotool mousemove_relative --polar 360 50
+	bindcode $mod+85 exec --no-startup-id xdotool mousemove_relative --polar 90 50
+	# Reset mouse location back to middle
+	bindcode $mod+84 exec --no-startup-id xdotool mousemove --polar 0 0
+	# Diagonal movement
+	bindcode $mod+81 exec --no-startup-id xdotool mousemove_relative --polar 45 50
+	bindcode $mod+89 exec --no-startup-id xdotool mousemove_relative --polar 135 50
+	bindcode $mod+87 exec --no-startup-id xdotool mousemove_relative --polar 225 50
+	bindcode $mod+79 exec --no-startup-id xdotool mousemove_relative --polar 315 50
+	# Moving accurately
+	bindcode $mod+Shift+83 exec --no-startup-id xdotool mousemove_relative --polar 270 10
+	bindcode $mod+Shift+88 exec --no-startup-id xdotool mousemove_relative --polar 180 10
+	bindcode $mod+Shift+80 exec --no-startup-id xdotool mousemove_relative --polar 360 10
+	bindcode $mod+Shift+85 exec --no-startup-id xdotool mousemove_relative --polar 90 10
+	# Moving accurately diagonally
+	bindcode $mod+Shift+81 exec --no-startup-id xdotool mousemove_relative --polar 45 10
+	bindcode $mod+Shift+89 exec --no-startup-id xdotool mousemove_relative --polar 135 10
+	bindcode $mod+Shift+87 exec --no-startup-id xdotool mousemove_relative --polar 225 10
+	bindcode $mod+Shift+79 exec --no-startup-id xdotool mousemove_relative --polar 315 10
+	# Mouse click
+	bindcode $mod+104 exec --no-startup-id xdotool click 1
+	bindcode $mod+Shift+104 exec --no-startup-id xdotool click 1
+	bindcode $mod+91 exec --no-startup-id xdotool click 2
+	bindcode $mod+Shift+91 exec --no-startup-id xdotool click 2
+	bindcode $mod+90 exec --no-startup-id xdotool click 3
+	bindcode $mod+Shift+90 exec --no-startup-id xdotool click 3
+	# Mouse scroll wheel
+	bindcode $mod+86 exec --no-startup-id xdotool click 5
+	bindcode $mod+Shift+86 exec --no-startup-id xdotool click 5
+	bindcode $mod+82 exec --no-startup-id xdotool click 4
+	bindcode $mod+Shift+82 exec --no-startup-id xdotool click 4
+
 
 	# switch to workspace
 	bindsym $mod+1 workspace $workspace1

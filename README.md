@@ -41,5 +41,6 @@ Things you may need if you'd like this to work out of the box
 - imagemagick
 - vtop
 - htop
+- xdotool
 
 Will edit if there's any more I've overlooked
