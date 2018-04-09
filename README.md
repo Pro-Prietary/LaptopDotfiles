@@ -42,5 +42,6 @@ Things you may need if you'd like this to work out of the box
 - vtop
 - htop
 - xdotool
+- vim-nerdtree
 
 Will edit if there's any more I've overlooked

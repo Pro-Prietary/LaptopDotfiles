@@ -100,8 +100,8 @@
 	# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 	bindsym $mod+Shift+r restart
 
-	# exit i3 (logs you out of your X session)
-	bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You sure you want to log out?' -b 'Im ready, Daddy' 'i3-msg exit'"
+	# exit
+	bindsym $mod+Shift+q exec --no-startup-id ~/.scripts/power_script.sh
 
 	# Open Htop, Lxtask and Vtop (Task Managers)
 	bindsym $mod+Shift+backslash exec --no-startup-id $term -e vtop --theme wizard
@@ -164,6 +164,8 @@
 	bindcode $mod+85 exec --no-startup-id xdotool mousemove_relative --polar 90 50
 	# Reset mouse location back to middle
 	bindcode $mod+84 exec --no-startup-id xdotool mousemove --polar 0 0
+	# Move Mouse out of the way
+	bindcode $mod+Shift+84 exec --no-startup-id xdotool mousemove --polar 119 790
 	# Diagonal movement
 	bindcode $mod+81 exec --no-startup-id xdotool mousemove_relative --polar 45 50
 	bindcode $mod+89 exec --no-startup-id xdotool mousemove_relative --polar 135 50

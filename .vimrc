@@ -1,5 +1,8 @@
 set number	
 set autoindent
+set spell! spelllang=en_us
+set wrap
+set linebreak
 
 syntax enable
 
