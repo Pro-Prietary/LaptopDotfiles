@@ -31,7 +31,6 @@
 	exec_always --no-startup-id ~/.scripts/screenlayout_script.sh
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id xset r rate 250 30
-	exec_always --no-startup-id ~/.scripts/DLL06B0config_script.sh
 	exec_always --no-startup-id ~/.scripts/Synaptics_TM3096-001_script.sh
 	exec_always --no-startup-id compton -f
 	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
@@ -121,9 +120,9 @@
 	bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 	# File manager
-	bindsym $mod+r exec --no-startup-id $term -e ranger
-	bindsym $mod+f exec --no-startup-id pcmanfm
+	bindsym $mod+f exec --no-startup-id $term -e ranger
 
+	# Mic controls
 	bindsym $mod+shift+m exec --no-startup-id ~/.scripts/resetmic.sh
 	bindsym $mod+m exec --no-startup-id amixer set Capture toggle
 
@@ -150,6 +149,9 @@
 	bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id cmus-remote -v +10%
 	bindsym $mod+XF86AudioLowerVolume exec --no-startup-id cmus-remote -v -10%
 	bindsym $mod+XF86AudioPause exec --no-startup-id pkill cmus
+
+	# Reddit Terminal Viewer
+	bindsym $mod+r exec --no-startup-id $term -e rtv
 
 	# Gaps controls
 	bindsym $mod+bracketright gaps inner current plus 5
@@ -193,7 +195,6 @@
 	bindcode $mod+Shift+86 exec --no-startup-id xdotool click 5
 	bindcode $mod+82 exec --no-startup-id xdotool click 4
 	bindcode $mod+Shift+82 exec --no-startup-id xdotool click 4
-
 
 	# switch to workspace
 	bindsym $mod+1 workspace $workspace1
