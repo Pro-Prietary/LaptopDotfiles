@@ -107,10 +107,11 @@
 	# exit
 	bindsym $mod+Shift+q exec --no-startup-id ~/.scripts/power_script.sh
 
-	# Open Htop, Lxtask and Vtop (Task Managers)
-	bindsym $mod+Shift+backslash exec --no-startup-id $term -e vtop --theme wizard
-	bindsym $mod+backslash exec --no-startup-id $term -e htop
-	bindsym $mod+Ctrl+backslash exec --no-startup-id lxtask
+	# Open Task Managers script
+	bindsym $mod+t exec --no-startup-id ~/.scripts/task_script.sh
+
+	# Open Audio Manager script
+	bindsym $mod+a exec --no-startup-id ~/.scripts/audio_script.sh
 
 	# i3lock
 	bindsym $mod+Shift+Delete exec --no-startup-id IconLocker.sh
@@ -125,8 +126,7 @@
 	bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 	# Internet
-	bindsym $mod+i exec --no-startup-id $term -e elinks duckduckgo.com
-	bindsym $mod+Shift+i exec --no-startup-id waterfox
+	bindsym $mod+i exec --no-startup-id exec ~/.scripts/internet_script.sh
 
 	# Youtube-viewer
 	bindsym $mod+y exec --no-startup-id $term -e youtube-viewer --colorful --quiet
