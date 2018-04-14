@@ -48,9 +48,10 @@
 	bindsym $mod+Return exec --no-startup-id $term
 
 	# set sticky
-	# p.s. it's preferable to change this if you find that the window doesn't move to a corner.
-	# I did 910x460 because they're the closest numbers to my resolution
-	bindcode $mod+49 floating enable; sticky enable; resize set 460 320; move absolute position 910 px 460 px; focus mode_toggle
+	# p.s. it's preferable to change the px numbers if you find that the window doesn't move to a corner.
+	bindcode $mod+49 floating enable; sticky enable; resize set 450 305; move absolute position 910 px 460 px; border pixel 5; focus tiling
+	# make sticky window into tiling window
+	bindcode $mod+23 focus floating; floating disable
 
 	# Floating Terminal
 	bindsym $mod+Shift+Return [title="Floatation_Device"] scratchpad show; [title="Floatation_Device"] move position center
@@ -59,7 +60,7 @@
 	bindsym $mod+q kill
 
 	# start rofi (a program launcher)
-	bindsym $mod+space exec --no-startup-id rofi -show combi
+	bindsym $mod+space exec --no-startup-id rofi -show run
 
 	# change focus
 	bindsym $mod+h focus left
@@ -74,10 +75,10 @@
 	bindsym $mod+Shift+l move right
 
 	# resize window
-	bindsym $mod+Shift+y resize shrink width 10 px or 10ppt
-	bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
-	bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
-	bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
+	bindsym $mod+Ctrl+h resize shrink width 10 px or 10ppt
+	bindsym $mod+Ctrl+k resize shrink height 10 px or 10 ppt
+	bindsym $mod+Ctrl+j resize grow height 10 px or 10 ppt
+	bindsym $mod+Ctrl+l resize grow width 10 px or 10 ppt
 
 	# split in horizontal orientation
 	bindsym $mod+Right split h
@@ -85,7 +86,7 @@
 	# split in vertical orientation
 	bindsym $mod+Down split v
 
-	# enter fullscreen mode for the focused container
+	# enter fullscreen mode
 	bindsym $mod+Shift+f fullscreen toggle
 
 	# change container layout (stacked, tabbed, toggle split)...(but noone uses stacked)
@@ -94,7 +95,6 @@
 
 	# toggle tiling / floating
 	bindsym $mod+Shift+z floating toggle
-
 	# change focus between tiling / floating windows
 	bindsym $mod+z focus mode_toggle
 
@@ -124,6 +124,16 @@
 	bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 	bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
+	# Internet
+	bindsym $mod+i exec --no-startup-id $term -e elinks duckduckgo.com
+	bindsym $mod+Shift+i exec --no-startup-id waterfox
+
+	# Youtube-viewer
+	bindsym $mod+y exec --no-startup-id $term -e youtube-viewer --colorful --quiet
+
+	# Games script
+	bindsym $mod+g exec --no-startup-id ~/.scripts/game_script.sh
+
 	# File manager
 	bindsym $mod+f exec --no-startup-id $term -e ranger
 
@@ -136,6 +146,9 @@
 
 	# Pavucontrol
 	bindsym $mod+p exec --no-startup-id pavucontrol
+
+	# Discord
+	bindsym $mod+d exec --no-startup-id discord
 
 	# Alsamixer
 	bindsym $mod+Shift+p exec --no-startup-id $term -e alsamixer
