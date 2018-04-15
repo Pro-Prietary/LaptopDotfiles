@@ -107,6 +107,9 @@
 	# exit
 	bindsym $mod+Shift+q exec --no-startup-id ~/.scripts/power_script.sh
 
+	# Polybar toggle
+	bindsym $mod+p exec --no-startup-id ~/.scripts/polybar_toggle.sh
+
 	# Open Task Managers script
 	bindsym $mod+t exec --no-startup-id ~/.scripts/task_script.sh
 
@@ -144,14 +147,8 @@
 	# Loopback script
 	bindsym $mod+n exec --no-startup-id ~/.scripts/loopback_script.sh
 
-	# Pavucontrol
-	bindsym $mod+p exec --no-startup-id pavucontrol
-
 	# Discord
 	bindsym $mod+d exec --no-startup-id discord
-
-	# Alsamixer
-	bindsym $mod+Shift+p exec --no-startup-id $term -e alsamixer
 
 	# Screenshot
 	bindsym Print exec --no-startup-id maim -u | xclip -selection clipboard -t image/png
