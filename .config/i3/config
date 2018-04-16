@@ -138,7 +138,7 @@
 	bindsym $mod+g exec --no-startup-id ~/.scripts/game_script.sh
 
 	# File manager
-	bindsym $mod+f exec --no-startup-id $term -e ranger
+	bindsym $mod+f exec --no-startup-id ~/.scripts/file_script.sh
 
 	# Mic controls
 	bindsym $mod+shift+m exec --no-startup-id ~/.scripts/resetmic.sh
