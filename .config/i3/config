@@ -140,6 +140,8 @@
 	# File manager
 	bindsym $mod+f exec --no-startup-id ~/.scripts/file_script.sh
 
+	bindsym $mod+c exec --no-startup-id ~/.scripts/chat_script.sh
+
 	# Mic controls
 	bindsym $mod+shift+m exec --no-startup-id ~/.scripts/resetmic.sh
 	bindsym $mod+m exec --no-startup-id amixer set Capture toggle
