@@ -149,9 +149,6 @@
 	# Loopback script
 	bindsym $mod+n exec --no-startup-id ~/.scripts/loopback_script.sh
 
-	# Discord
-	bindsym $mod+d exec --no-startup-id discord
-
 	# Screenshot
 	bindsym Print exec --no-startup-id maim -u | xclip -selection clipboard -t image/png
 	bindsym Shift+Print exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
