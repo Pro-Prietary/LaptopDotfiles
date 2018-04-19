@@ -127,12 +127,11 @@
 	# Screen brightness controls
 	bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 	bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-
-	# Email client
-	bindsym $mod+e exec thunderbird
+	bindsym $mod+XF86MonBrightnessUp exec xbacklight -set 90 # set brightness to 90%
+	bindsym $mod+XF86MonBrightnessDown exec xbacklight -set 10 # set brightness to 10%
 
 	# Internet
-	bindsym $mod+w exec --no-startup-id exec ~/.scripts/internet_script.sh
+	bindsym $mod+i exec --no-startup-id exec ~/.scripts/internet_script.sh
 
 	# Youtube-viewer
 	bindsym $mod+y exec --no-startup-id $term -e youtube-viewer --colorful --quiet
@@ -182,10 +181,6 @@
 	bindcode $mod+88 exec --no-startup-id xdotool mousemove_relative --polar 180 50
 	bindcode $mod+80 exec --no-startup-id xdotool mousemove_relative --polar 360 50
 	bindcode $mod+85 exec --no-startup-id xdotool mousemove_relative --polar 90 50
-	# Reset mouse location back to middle
-	bindcode $mod+84 exec --no-startup-id xdotool mousemove --polar 0 0
-	# Move Mouse out of the way
-	bindcode $mod+Shift+84 exec --no-startup-id xdotool mousemove --polar 119 790
 	# Diagonal movement
 	bindcode $mod+81 exec --no-startup-id xdotool mousemove_relative --polar 45 50
 	bindcode $mod+89 exec --no-startup-id xdotool mousemove_relative --polar 135 50
@@ -213,6 +208,10 @@
 	bindcode $mod+Shift+86 exec --no-startup-id xdotool click 5
 	bindcode $mod+82 exec --no-startup-id xdotool click 4
 	bindcode $mod+Shift+82 exec --no-startup-id xdotool click 4
+	# Reset mouse location back to middle
+	bindcode $mod+84 exec --no-startup-id xdotool mousemove --polar 0 0
+	# Move Mouse out of the way
+	bindcode $mod+Shift+84 exec --no-startup-id xdotool mousemove --polar 119 790
 
 	# switch to workspace
 	bindsym $mod+1 workspace $workspace1
