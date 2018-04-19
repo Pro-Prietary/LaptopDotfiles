@@ -14,6 +14,7 @@ Things you may need if you'd like this to work out of the box
 - i3-gaps
 - betterlockscreen
 - ranger
+- thunderbird
 - tlp
 - lxappearance
 - lx-task
@@ -22,6 +23,7 @@ Things you may need if you'd like this to work out of the box
 - polybar
 - rofi
 - lutris
+- engrampa
 - keepassxc
 - steam
 - wine
@@ -42,5 +44,16 @@ Things you may need if you'd like this to work out of the box
 - htop
 - xdotool
 - vim-nerdtree
+- youtube-viewer
+- elinks
+- google chrome
+- riot
+- caprine
+- alsamixer
+- pavucontrol
+- pcmanfm
+- i3lock
+- retroarch
+- cmus
 
 Will edit if there's any more I've overlooked

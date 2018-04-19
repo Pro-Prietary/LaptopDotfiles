@@ -90,8 +90,8 @@
 	bindsym $mod+Shift+f fullscreen toggle
 
 	# change container layout (stacked, tabbed, toggle split)...(but noone uses stacked)
-	bindsym $mod+w layout tabbed
-	bindsym $mod+e layout toggle split
+	bindsym $mod+comma layout tabbed
+	bindsym $mod+period layout toggle split
 
 	# toggle tiling / floating
 	bindsym $mod+Shift+z floating toggle
@@ -128,13 +128,17 @@
 	bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 	bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
+	# Email client
+	bindsym $mod+e exec thunderbird
+
 	# Internet
-	bindsym $mod+i exec --no-startup-id exec ~/.scripts/internet_script.sh
+	bindsym $mod+w exec --no-startup-id exec ~/.scripts/internet_script.sh
 
 	# Youtube-viewer
 	bindsym $mod+y exec --no-startup-id $term -e youtube-viewer --colorful --quiet
 
 	# Games script
+	# You may need to change this script heavily as people might not have the same games as me
 	bindsym $mod+g exec --no-startup-id ~/.scripts/game_script.sh
 
 	# File manager

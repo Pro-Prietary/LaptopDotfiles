@@ -1,10 +1,11 @@
 set number	
 set autoindent
-set spell! spelllang=en_us
 set wrap
 set linebreak
 
 syntax enable
+
+map <F7> :set spell! spelllang=en_us<CR>
 
 ino ( ()<left>
 ino [ []<left>
