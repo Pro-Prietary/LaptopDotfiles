@@ -2,7 +2,7 @@
 
 choices="Discord\nRiot\nFacebook Messenger"
 
-chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Choose a Messenger app-###")
+chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Choose a Messenger App-###")
 
 case "$chosen" in
 	Discord) notify-send "Running Discord" && discord ;;
