@@ -242,7 +242,6 @@
 	new_window 1pixel
 
 	# Configure OwnCloud
-	for_window [class="ownCloud"] move to workspace $workspace1
 	for_window [class="ownCloud"] floating disable
 	for_window [class="ownCloud"] layout tabbed
 
@@ -290,10 +289,6 @@
 	for_window [title="Floatation_Device"] resize set 800 500
 	for_window [title="Floatation_Device"] move scratchpad
 	for_window [title="Floatation_Device"] border pixel 5
-
-	# Configure Texmaker
-	for_window [class="Texmaker"] move to workspace $workspace2
-	for_window [class="Texmaker"] layout tabbed
 
 	# Configure Steam
 	for_window [class="Steam"] move to workspace $workspace3
