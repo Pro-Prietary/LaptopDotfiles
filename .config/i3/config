@@ -33,7 +33,7 @@
 	exec_always --no-startup-id xset r rate 250 30
 	exec_always --no-startup-id ~/.scripts/Synaptics_TM3096-001_script.sh
 	exec_always --no-startup-id compton --no-fading-openclose -C -r 0 -o 0 -t 0 -l 0 -I 0 -D 0 -G
-	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/Manjaro-windows.png
+	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/BulletKin.jpg
 	#exec --no-startup-id mpv --border --video-unscaled=no --video-zoom=0.18 --wid=0 --loop-file=inf --speed=1.0 --mute=yes ~/.config/i3/Eclipse.gif
 	exec --no-startup-id syndaemon -i 1 -t -K -R -d
 	exec --no-startup-id redshift
