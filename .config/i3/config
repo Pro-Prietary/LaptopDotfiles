@@ -290,6 +290,13 @@
 	for_window [title="Floatation_Device"] move scratchpad
 	for_window [title="Floatation_Device"] border pixel 5
 
+	# Configure Runscape-Konduit
+	# This is my own Konduit account, change "ProMotion" if you have a different name
+	for_window [title="Konduit Launcher v1.38.1 - ProMotion"] floating enable
+	for_window [title="Konduit Launcher v1.38.1 - ProMotion"] move position center
+	for_window [title="Konduit Launcher v1.38.1"] floating enable
+	for_window [title="Konduit Launcher v1.38.1"] move position center
+
 	# Configure Steam
 	for_window [class="Steam"] move to workspace $workspace3
 	for_window [class="Steam"] layout tabbed
