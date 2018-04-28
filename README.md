@@ -1,7 +1,7 @@
 # LaptopDotfiles
 This is my Laptop's dotfiles! I use I3 with Polybar!
 Things you may need if you'd like this to work out of the box
-- compton
+- dunst
 - mpv
 - waterfox
 - audacity
@@ -32,7 +32,6 @@ Things you may need if you'd like this to work out of the box
 - playerctl
 - pactl
 - jabref
-- texmaker
 - texlive (or texcore, if you're on a Debian-based OS)
 - biber
 - networkmanager (nm-applet)

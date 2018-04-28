@@ -22,9 +22,6 @@
 	font pango:monospace 8
 	# Use Mouse+$mod to drag floating windows to their wanted position
 	floating_modifier $mod 
-	# Gaps configuration
-	hide_edge_borders both
-	gaps inner 0
 
 ###== Startup applications ===###
 	exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &	
@@ -32,7 +29,6 @@
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id xset r rate 250 30
 	exec_always --no-startup-id ~/.scripts/Synaptics_TM3096-001_script.sh
-	exec_always --no-startup-id compton --no-fading-openclose -C -r 0 -o 0 -t 0 -l 0 -I 0 -D 0 -G
 	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/BulletKin.jpg
 	#exec --no-startup-id mpv --border --video-unscaled=no --video-zoom=0.18 --wid=0 --loop-file=inf --speed=1.0 --mute=yes ~/.config/i3/Eclipse.gif
 	exec --no-startup-id syndaemon -i 1 -t -K -R -d
@@ -171,8 +167,8 @@
 	bindsym $mod+r exec --no-startup-id $term -e rtv
 
 	# Gaps controls
-	bindsym $mod+bracketright gaps inner current plus 5
-	bindsym $mod+bracketleft gaps inner current minus 5
+	bindsym $mod+bracketright gaps inner current plus 5; gaps outer current plus 5
+	bindsym $mod+bracketleft gaps inner current minus 5; gaps outer current minus 5
 	bindsym $mod+Shift+bracketright gaps inner all set 15; gaps outer all set 15
 	bindsym $mod+Shift+bracketleft gaps inner all set 0; gaps outer all set 0
 
@@ -240,6 +236,12 @@
 ###=== Window Configurations ===###
 	# Configuring ALL types of windows
 	new_window 1pixel
+	hide_edge_borders smart
+	focus_follows_mouse no
+	popup_during_fullscreen leave_fullscreen
+	focus_on_window_activation urgent
+	gaps inner 0
+	gaps outer 0
 
 	# Configure OwnCloud
 	for_window [class="ownCloud"] floating disable

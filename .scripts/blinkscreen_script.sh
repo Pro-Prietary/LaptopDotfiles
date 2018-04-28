@@ -1,8 +1,9 @@
-transset-df -a -m 0
+i3-msg "border 1pixel"
 sleep .1
-transset-df -a -x 1
+i3-msg "border none"
 sleep .1
-transset-df -a -m 0
+i3-msg "border 1pixel"
 sleep .1
-transset-df -a -x 1
-
+i3-msg "border none"
+sleep .1
+i3-msg "border 1pixel"
