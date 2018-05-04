@@ -1,6 +1,7 @@
 # LaptopDotfiles
 This is my Laptop's dotfiles! I use I3 with Polybar!
 Things you may need if you'd like this to work out of the box
+- cava
 - dunst
 - mpv
 - waterfox
