@@ -4,7 +4,7 @@ choices="Ranger\nPcmanfm"
 
 term="exec lxterminal -e"
 
-chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Choose a File Manager-###")
+chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-File Manager Menu-###")
 
 case "$chosen" in
 	Ranger) notify-send "Running Ranger" && $term ranger ;;

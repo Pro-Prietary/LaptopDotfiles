@@ -2,7 +2,7 @@
 
 choices="Waterfox\nElinks\nGoogle Chrome\nThunderbird"
 
-chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Choose an Internet Client-###")
+chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Internet Menu-###")
 
 case "$chosen" in
 	Waterfox) notify-send "Running Waterfox" && waterfox ;;

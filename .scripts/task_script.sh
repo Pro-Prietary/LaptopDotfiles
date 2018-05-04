@@ -4,7 +4,7 @@ choices="htop\nvtop\nlxtask"
 
 term="exec lxterminal -e"
 
-chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Choose a Task Manager-###")
+chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Task Manager Menu-###")
 
 case "$chosen" in
 	htop) notify-send "Running htop" && $term htop ;;

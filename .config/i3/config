@@ -29,7 +29,7 @@
 	exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	exec_always --no-startup-id xset r rate 250 30
 	exec_always --no-startup-id ~/.scripts/Synaptics_TM3096-001_script.sh
-	exec_always --no-startup-id feh --bg-scale /home/cyrano/Pictures/Background_Pictures/BulletKin.jpg
+	exec_always --no-startup-id feh --bg-fill /home/cyrano/Pictures/Background_Pictures/Moon.png
 	#exec --no-startup-id mpv --border --video-unscaled=no --video-zoom=0.18 --wid=0 --loop-file=inf --speed=1.0 --mute=yes ~/.config/i3/Eclipse.gif
 	exec --no-startup-id syndaemon -i 1 -t -K -R -d
 	exec --no-startup-id redshift
@@ -43,7 +43,7 @@
 	# start a terminal
 	bindsym $mod+Return exec --no-startup-id $term
 
-	# set sticky
+	# set minimize window
 	# p.s. it's preferable to change the px numbers if you find that the window doesn't move to a corner.
 	bindcode $mod+49 floating enable; sticky enable; resize set 450 305; move absolute position 910 px 460 px; border pixel 5; focus tiling
 	# make sticky window into tiling window
@@ -248,7 +248,7 @@
 	for_window [class="ownCloud"] layout tabbed
 
 	# Configure Cmus
-	for_window [title="cmus"] move to workspace $workspace0
+	for_window [title="cmus"] move to workspace -1
 
 	# Configure Waterfox
 	for_window [class="Waterfox"] move to workspace $workspace1

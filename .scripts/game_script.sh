@@ -2,7 +2,7 @@
 
 choices="Another Metroid 2 Remake\nASCIIpOrtal\nBattle for Wesnoth\nCataclysm: Dark Days Ahead\nCrypt of the NecroDancer\nDark Mod\nDungeon Crawl Stone Soup\nDolphin Emulator\nEarthbound\nEggnogg Plus\nElder Scrolls III: Morrowind\nEnter the Gungeon\nFire Emblem\nFreeciv\nFTL Advanced Edition\nGo\nGolden Sun\nHedgewars\nJotun\nKirby's Dream Course\nKirby's Nightmare in Dreamland\nLutris\nMega Man Battle Network 6\nMinetest\nMount & Blade: Warband\nMs. Pac-Man\nOpenspades\nPapers Please\nPokemon Emerald\nPrimeRL\nRunescape\nSteam\nSuper Mario Bros 3\nSuper Mario RPG\nSuper Tux Kart"
 
-chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Choose a Game-###")
+chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Game Library-###")
 
 term="exec lxterminal -e"
 
