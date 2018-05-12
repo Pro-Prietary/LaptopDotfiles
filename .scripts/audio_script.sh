@@ -1,13 +1,12 @@
 #!/bin/bash
 
-choices="Chillaxe Mode\nPavucontrol\nAlsamixer"
+choices="Pulseaudio\nAlsamixer"
 
-term="exec lxterminal -e"
+term="exec urxvt -e"
 
 chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Audio Menu-###")
 
 case "$chosen" in
-	Pavucontrol) notify-send "Running Pavucontrol" && pavucontrol ;;
+	Pulseaudio) notify-send "Running Pavucontrol" && pavucontrol ;;
 	Alsamixer) notify-send "Running Alsamixer" && $term alsamixer;;
-	Chillaxe\ Mode) notify-send "Turning on Chillaxe_Mode" && ~/.scripts/chillax_mode_script.sh
 esac

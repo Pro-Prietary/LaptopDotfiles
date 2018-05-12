@@ -9,6 +9,7 @@ filename="$HOME/screencast$n.mkv"
 #The actual ffmpeg command:
 
 ffmpeg -y \
+-r 25 \
 -f x11grab \
 -s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
 -i :0.0 \

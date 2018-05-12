@@ -2,7 +2,7 @@
 
 choices="htop\nvtop\nlxtask"
 
-term="exec lxterminal -e"
+term="exec urxvt -e"
 
 chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Task Manager Menu-###")
 

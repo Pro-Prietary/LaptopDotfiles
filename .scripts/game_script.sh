@@ -4,7 +4,7 @@ choices="Another Metroid 2 Remake\nASCIIpOrtal\nBattle for Wesnoth\nCataclysm: D
 
 chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Game Library-###")
 
-term="exec lxterminal -e"
+term="exec urxvt -e"
 
 case "$chosen" in 
 	Another\ Metroid\ 2\ Remake) notify-send "Running Another Metroid 2 Remake" && exec ~/Games/AM2R_v1.1_linux_unofficial/am2r ;;
