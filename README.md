@@ -42,7 +42,6 @@ Things you may need if you'd like this to work out of the box
 - Reddit Terminal Viewer (rtv)
 - scrot
 - imagemagick
-- vtop
 - htop
 - xdotool
 - vim-nerdtree

@@ -1,5 +1,7 @@
 if [ -z $(ps --no-headers -o comm= -C cmus) ]; then
-urxvt -e cmus && sleep 2 && cmus-remote -u
+	urxvt -e cmus &
+	sleep 1 ;
+	cmus-remote -u
 else
-cmus-remote -u
+	cmus-remote -u
 fi
