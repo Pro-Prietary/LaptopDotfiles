@@ -1,7 +1,8 @@
 # LaptopDotfiles
 This is my Laptop's dotfiles! I use I3 with Polybar!
 Things you may need if you'd like this to work out of the box
-- discline
+- curie (https://github.com/NerdyPepper/scientifica)
+- discline (https://github.com/MitchWeaver/Discline)
 - cava
 - dunst
 - mpv
