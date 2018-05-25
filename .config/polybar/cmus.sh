@@ -29,4 +29,4 @@ min_sec_from_sec() {
   echo -n "$(prepend_zero $(($1 / 60))):$(prepend_zero $(($1 % 60)))"
 }
 
-echo -n "$(get_stat artist)  -  $(get_stat title)  [$(min_sec_from_sec $(get_stat position)) / $(min_sec_from_sec $(get_stat duration))]"
+echo -n "|| Status: $(get_stat status) || Volume: $(get_stat vol_left) ||  [$(min_sec_from_sec $(get_stat position)) / $(min_sec_from_sec $(get_stat duration))] ||"

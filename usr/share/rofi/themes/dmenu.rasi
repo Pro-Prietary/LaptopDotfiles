@@ -7,7 +7,7 @@
     background-color:      Black;
     border-color:          White;
     text-color:           White;
-    font:            "monospace 8";
+    font:            "curie 8";
 }
 
 configuration {

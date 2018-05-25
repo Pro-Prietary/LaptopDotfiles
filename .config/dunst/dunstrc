@@ -148,7 +148,7 @@
     ignore_newline = no
 
     # Merge multiple notifications with the same content
-    stack_duplicates = true
+    stack_duplicates = false
 
     # Hide the count of merged notifications with the same content
     hide_duplicate_count = false
@@ -159,7 +159,7 @@
     ### Icons ###
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32

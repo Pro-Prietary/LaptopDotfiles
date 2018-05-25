@@ -112,7 +112,7 @@
 	bindsym $mod+p exec --no-startup-id polybar-msg cmd toggle
 
 	# Open Task Managers script
-	bindsym $mod+t exec --no-startup-id ~/.scripts/task_script.sh
+	bindsym $mod+backslash exec notify-send "Running htop" ; exec --no-startup-id $term -e htop
 
 	# Open Audio Manager script
 	bindsym $mod+a exec --no-startup-id ~/.scripts/audio_script.sh
@@ -136,6 +136,9 @@
 
 	# Youtube
 	bindsym $mod+y $notify "Running Youtube Terminal" ; exec --no-startup-id $term -e youtube-viewer --colorful --quiet 
+
+	# Database
+	bindsym $mod+d $notify "Running Keepassxc" ; exec --no-startup-id keepassxc 
 
 	# Email
 	bindsym $mod+e $notify "Running Email Client" ; exec --no-startup-id $email 
@@ -258,9 +261,6 @@
 	# Configure OwnCloud
 	for_window [class="ownCloud"] floating disable
 	for_window [class="ownCloud"] layout tabbed
-
-	# Configure Cmus
-	for_window [title="cmus"] move to workspace 10
 
 	# Configure Waterfox
 	for_window [class="Waterfox"] move to workspace $workspace1

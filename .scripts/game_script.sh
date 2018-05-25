@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choices="Another Metroid 2 Remake\nASCIIpOrtal\nBattle for Wesnoth\nCataclysm: Dark Days Ahead\nCrypt of the NecroDancer\nDark Mod\nDungeon Crawl Stone Soup\nDolphin Emulator\nEarthbound\nEggnogg Plus\nElder Scrolls III: Morrowind\nEnter the Gungeon\nFire Emblem\nFreeciv\nFTL Advanced Edition\nGo\nGolden Sun\nHedgewars\nJotun\nKirby's Dream Course\nKirby's Nightmare in Dreamland\nLutris\nMega Man Battle Network 6\nMinetest\nMount & Blade: Warband\nMs. Pac-Man\nOpenspades\nPapers Please\nPokemon Emerald\nPrimeRL\nRunescape\nSteam\nSuper Mario Bros 3\nSuper Mario RPG\nSuper Tux Kart"
+choices="Another Metroid 2 Remake\nASCIIpOrtal\nBattle for Wesnoth\nCataclysm: Dark Days Ahead\nCrypt of the NecroDancer\nDark Mod\nDungeon Crawl Stone Soup\nDolphin Emulator\nEarthbound\nEggnogg Plus\nElder Scrolls III: Morrowind\nEnter the Gungeon\nFire Emblem\nFreeciv\nFTL Advanced Edition\nGo\nGolden Sun\nHedgewars\nJotun\nKirby's Dream Course\nKirby's Nightmare in Dreamland\nLutris\nMega Man Battle Network 6\nMinetest\nMount & Blade: Warband\nMs. Pac-Man\nOSRS\nOpenspades\nPapers Please\nPokemon Emerald\nPrimeRL\nRunescape\nSteam\nSuper Mario Bros 3\nSuper Mario RPG\nSuper Tux Kart"
 
 chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Game Library-###")
 
@@ -32,6 +32,7 @@ case "$chosen" in
 	Mega\ Man\ Battle\ Network\ 6) notify-send "Running Mega Man Battle Network 6" && exec ~/Games/Emulation/GBA_ROMS/scripts/MegaMan\ Battle\ Network\ 6.sh ;;
 	Minetest) notify-send "RUnning Minetest" && minetest ;;
 	Mount\ \&\ Blade\:\ Warband) notify-send "Running Mount & Blade: Warband" && exec ~/Games/GOG/Mount_Blade_Warband/start.sh ;;
+	OSRS) notify-send "Running Oldschool Runescape" && exec ~/.scripts/runelite_script.sh ;;
 	Ms.\ Pac-Man) notify-send "Running Ms.Pac-Man" && exec ~/Games/Emulation/SNES_ROMS/scripts/Ms.Pac-Man.sh ;;
 	Openspades) notify-send "Running Openspades" && exec openspades ;;
 	Papers\ Please) notify-send "Running Papers Please" && exec ~/Games/GOG/Papers\ Please/start.sh ;;
