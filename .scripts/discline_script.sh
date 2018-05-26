@@ -8,7 +8,7 @@
 # These are just examples of what I use,
 # edit them to match your system and needs.
 
-term='urxvt'
+term='gnome-terminal'
 shell='/bin/bash'
 DISCLINE_DIR="~/.discline"
 PYTHON_VERSION='3.6'

@@ -1,4 +1,4 @@
-TERM='urxvt -e'
+TERM='gnome-terminal -e'
 
 if [ $(ps --no-headers -o comm= -C cmatrix) ]; then
 	notify-send "Killing CHILLAXE_MODE"

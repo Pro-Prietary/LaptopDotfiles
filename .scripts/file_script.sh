@@ -2,7 +2,7 @@
 
 choices="Ranger\nPcmanfm"
 
-term="exec urxvt -e"
+term="exec gnome-terminal -e"
 
 chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-File Manager Menu-###")
 

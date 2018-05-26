@@ -1,1 +1,1 @@
-urxvt -e telnet mapscii.me
+gnome-terminal -e telnet mapscii.me

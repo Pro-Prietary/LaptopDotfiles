@@ -2,7 +2,7 @@
 
 choices="Pulseaudio\nAlsamixer"
 
-term="exec urxvt -e"
+term="gnome-terminal urxvt -e"
 
 chosen=$(echo -e "$choices" | rofi -dmenu -i -p "###-Audio Menu-###")
 

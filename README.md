@@ -3,6 +3,8 @@ This is my Laptop's dotfiles! I use I3 with Polybar!
 Things you may need if you'd like this to work out of the box
 - curie (https://github.com/NerdyPepper/scientifica)
 - discline (https://github.com/MitchWeaver/Discline)
+- udiskie
+- trash-cli
 - cava
 - dunst
 - mpv
@@ -13,16 +15,11 @@ Things you may need if you'd like this to work out of the box
 - ownCloud (changed from Megasync after learning SHADY some stuff about it)
 - parcellite
 - feh
-- polkit-gnome
 - i3-gaps
-- betterlockscreen
 - ranger
 - thunderbird
-- tlp
 - lxappearance
-- lx-task
 - maim
-- betterlockscreen
 - polybar
 - rofi
 - lutris
@@ -30,14 +27,13 @@ Things you may need if you'd like this to work out of the box
 - keepassxc
 - steam
 - wine
-- urxvt
+- gnome-terminal
 - xbacklight
 - playerctl
 - pactl
-- jabref
+- urxvt
 - texlive (or texcore, if you're on a Debian-based OS)
 - biber
-- networkmanager (nm-applet)
 - xclip
 - Reddit Terminal Viewer (rtv)
 - scrot
@@ -48,8 +44,6 @@ Things you may need if you'd like this to work out of the box
 - youtube-viewer
 - elinks
 - google chrome
-- riot
-- caprine
 - alsamixer
 - pavucontrol
 - pcmanfm
